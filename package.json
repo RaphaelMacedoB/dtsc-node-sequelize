@@ -1,29 +1,30 @@
 {
-  "name": "dtsc-node-sequelize",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/lucasmacedobernardino/dtsc-node-sequelize.git"
-  },
-  "author": "Lucas Macedo Bernardino | Jefferson Abreu | Raphael Macedo Bernardino",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lucasmacedobernardino/dtsc-node-sequelize/issues"
-  },
-  "homepage": "https://github.com/lucasmacedobernardino/dtsc-node-sequelize#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "pg": "^8.10.0",
-    "sequelize": "^6.31.0",
-    "sqlite3": "^5.1.6"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
-  }
+    "name": "dtsc-node-sequelize",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon src/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/lucasmacedobernardino/dtsc-node-sequelize.git"
+    },
+    "author": "Lucas Macedo Bernardino | Jefferson Abreu | Raphael Macedo Bernardino",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lucasmacedobernardino/dtsc-node-sequelize/issues"
+    },
+    "homepage": "https://github.com/lucasmacedobernardino/dtsc-node-sequelize#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "pg": "^8.10.0",
+        "sequelize": "^6.31.0",
+        "sqlite3": "^5.1.6"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.22"
+    }
 }
