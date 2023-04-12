@@ -1,0 +1,19 @@
+{
+  "name": "dtsc-node-sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/lucasmacedobernardino/dtsc-node-sequelize.git"
+  },
+  "author": "Lucas Macedo Bernardino | Jefferson Abreu | Raphael Macedo Bernardino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucasmacedobernardino/dtsc-node-sequelize/issues"
+  },
+  "homepage": "https://github.com/lucasmacedobernardino/dtsc-node-sequelize#readme"
+}
