@@ -12,6 +12,10 @@ class District extends Model {
             }
         }, { sequelize, modelName: "district", tableName: "districts" });
     }
+
+    static associate(models) {
+        this.belongsTo(models.city, { as: 'city', foreignKey: { name: 'cityId', allowNull: false, validate: { notNull: { msg: 'A Cidade do Bairro deve ser preenchida!' } } } });
+    }
 }
 
 export { District }
