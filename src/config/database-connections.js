@@ -5,17 +5,20 @@ import { Uf } from "../models/Uf.js";
 import { City } from "../models/City.js";
 import { District } from "../models/District.js";
 import { Tutor } from "../models/Tutor.js"
+import { DogSize } from "../models/DogSize.js";
 const sequelize = new Sequelize(databaseConfig)
 
 Uf.init(sequelize)
 City.init(sequelize)
 District.init(sequelize)
 Tutor.init(sequelize)
+DogSize.init(sequelize)
 
 Uf.associate(sequelize.models);
 City.associate(sequelize.models);
 District.associate(sequelize.models);
 Tutor.associate(sequelize.models)
+DogSize.associate(sequelize.models)
 
 databaseInserts();
 
@@ -40,6 +43,27 @@ function databaseInserts() {
         const tutor2 = await Tutor.create({ name: "Raphael Macedo Bernardino", house_number: "108", zip_code: "29.307-195", email: "faeldojo@gmail.com", phone: "(28)99916-2116", public_place: "Aceito", date_of_birth: "2000/03/28", space_size: "500", districtId: 2 })
         const tutor3 = await Tutor.create({ name: "Jefferson Abreu", house_number: "49", zip_code: "29.307-125", email: "download10@gmail.com", phone: "(28)99914-4651", public_place: "Aceito", date_of_birth: "1980/02/14", space_size: "650", districtId: 1 })
         const tutor4 = await Tutor.create({ name: "Jonatas Silva Bernardino", house_number: "108", zip_code: "29.307-195", email: "jobernardino0@gmail.com", phone: "(28)99919-0497", public_place: "Aceito", date_of_birth: "1979/04/14", space_size: "650", districtId: 3 })
+
+        const dogsize1 = await DogSize.create({
+            name: "mini",
+            occupied_size: "10"
+        })
+        const dogsize2 = await DogSize.create({
+            name: "pequeno",
+            occupied_size: "15"
+        })
+        const dogsize3 = await DogSize.create({
+            name: "medio",
+            occupied_size: "30"
+        })
+        const dogsize4 = await DogSize.create({
+            name: "grande",
+            occupied_size: "50"
+        })
+        const dogsize5 = await DogSize.create({
+            name: "gigante",
+            occupied_size: "100"
+        })
     })();
 }
 
