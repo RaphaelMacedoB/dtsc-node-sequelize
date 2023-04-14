@@ -12,6 +12,9 @@ class City extends Model {
             }
         }, { sequelize, modelName: "city", tableName: "cities" });
     }
+    static associate(models) {
+        this.belongsTo(models.uf, { as: 'uf', foreignKey: { name: 'ufId', allowNull: false, validate: { notNull: { msg: 'Uf da Cidade deve ser preenchida!' } } } });
+    }
 }
 
 export { City };
