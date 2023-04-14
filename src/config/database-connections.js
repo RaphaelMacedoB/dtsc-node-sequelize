@@ -6,6 +6,7 @@ import { City } from "../models/City.js";
 import { District } from "../models/District.js";
 import { Tutor } from "../models/Tutor.js"
 import { DogSize } from "../models/DogSize.js";
+import { Breed } from "../models/Breed.js";
 const sequelize = new Sequelize(databaseConfig)
 
 Uf.init(sequelize)
@@ -13,12 +14,14 @@ City.init(sequelize)
 District.init(sequelize)
 Tutor.init(sequelize)
 DogSize.init(sequelize)
+Breed.init(sequelize)
 
 Uf.associate(sequelize.models);
 City.associate(sequelize.models);
 District.associate(sequelize.models);
 Tutor.associate(sequelize.models)
 DogSize.associate(sequelize.models)
+Breed.associate(sequelize.models)
 
 databaseInserts();
 
@@ -64,6 +67,11 @@ function databaseInserts() {
             name: "gigante",
             occupied_size: "100"
         })
+
+        const breed1 = await Breed.create({ name: "Dogue alemão", dogSizeId: 3 })
+        const breed2 = await Breed.create({ name: "Golden retriever", dogSizeId: 5 })
+        const breed3 = await Breed.create({ name: "Husky siberiano", dogSizeId: 3 })
+        const breed4 = await Breed.create({ name: "Bull Terrier", dogSizeId: 3 })
     })();
 }
 

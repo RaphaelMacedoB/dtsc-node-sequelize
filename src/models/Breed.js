@@ -16,7 +16,7 @@ class Breed extends Model {
         }, { sequelize, modelName: "breed", tableName: "breeds" });
     }
     static associate(models) {
-        this.belongsTo(models.district, { as: 'dog_size', foreignKey: { name: 'dog_sizeId', allowNull: false, validate: { notNull: { msg: 'O porte do cão deve ser preenchida!' } } } });
+        this.belongsTo(models.dogSize, { as: 'dogSize', foreignKey: { name: 'dogSizeId', allowNull: false, validate: { notNull: { msg: 'O porte do cão deve ser preenchida!' } } } });
     }
 }
 

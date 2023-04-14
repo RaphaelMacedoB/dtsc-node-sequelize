@@ -21,10 +21,9 @@ class DogSize extends Model {
                     min: { msg: "O espaço requerido não pode ser negativo!", args: [0] }
                 }
             }
-        }, { sequelize, modelName: "dog_size", tableName: "dog_sizes" });
+        }, { sequelize, modelName: "dogSize", tableName: "dogSizes" });
     }
-    static associate(models) {
-    }
+    static associate(models) {}
 }
 
 export { DogSize };
