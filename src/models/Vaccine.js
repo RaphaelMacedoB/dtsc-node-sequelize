@@ -14,14 +14,13 @@ class Vaccine extends Model {
                 }
             },
             dosage_interval_days: {
-                type: DataTypes.DATE,
+                type: DataTypes.INTEGER,
+                allowNull: false,
                 validate: {
-                    dosageIntervalValidator(value) {
-                        if (new Date(value) < new Date(3)) {
-                            throw new Error("invalid date");
-                        }
-                    },
-                },
+                    notNull: { msg: "O intervalor de dosagem não pode ser nulo!" },
+                    notEmpty: { msg: "O intervalor de dosagem não pode ser vazio!" },
+                    min: { msg: "O intervalor de dosagem não pode ser negativo!", args: [0] }
+                }
             }
         }, { sequelize, modelName: "vaccine", tableName: "vaccines" });
     }
@@ -31,4 +30,4 @@ class Vaccine extends Model {
     }
 }
 
-export { Breed };
+export { Vaccine };

@@ -7,6 +7,7 @@ import { District } from "../models/District.js";
 import { Tutor } from "../models/Tutor.js"
 import { DogSize } from "../models/DogSize.js";
 import { Breed } from "../models/Breed.js";
+import { Vaccine } from "../models/Vaccine.js";
 const sequelize = new Sequelize(databaseConfig)
 
 Uf.init(sequelize)
@@ -15,6 +16,7 @@ District.init(sequelize)
 Tutor.init(sequelize)
 DogSize.init(sequelize)
 Breed.init(sequelize)
+Vaccine.init(sequelize)
 
 Uf.associate(sequelize.models);
 City.associate(sequelize.models);
@@ -22,6 +24,7 @@ District.associate(sequelize.models);
 Tutor.associate(sequelize.models)
 DogSize.associate(sequelize.models)
 Breed.associate(sequelize.models)
+Vaccine.associate(sequelize.models)
 
 databaseInserts();
 
@@ -72,6 +75,14 @@ function databaseInserts() {
         const breed2 = await Breed.create({ name: "Golden retriever", dogSizeId: 5 })
         const breed3 = await Breed.create({ name: "Husky siberiano", dogSizeId: 3 })
         const breed4 = await Breed.create({ name: "Bull Terrier", dogSizeId: 3 })
+
+        const vaccine1breed1 = await Vaccine.create({ name: "AHS82", dosage_interval_days: "3", breedId: 1 })
+        const vaccine1breed2 = await Vaccine.create({ name: "DJGH21", dosage_interval_days: "4", breedId: 1 })
+        const vaccine2breed1 = await Vaccine.create({ name: "WYRT0", dosage_interval_days: "5", breedId: 2 })
+        const vaccine3breed3 = await Vaccine.create({ name: "ADFH23", dosage_interval_days: "2", breedId: 3 })
+
+
+
     })();
 }
 
