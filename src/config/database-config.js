@@ -8,7 +8,6 @@ export const databaseConfig = {
         underscored: true
     }
 };
-
 /*
 // Configuração do bando de dados no ambiente de desenvolvimento
 export const databaseConfig = {

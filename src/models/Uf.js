@@ -22,3 +22,5 @@ class Uf extends Model {
         }, { sequelize, modelName: "uf", tableName: "ufs" });
     }
 }
+
+export { Uf };

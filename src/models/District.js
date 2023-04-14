@@ -13,3 +13,5 @@ class District extends Model {
         }, { sequelize, modelName: "district", tableName: "districts" });
     }
 }
+
+export { District }
