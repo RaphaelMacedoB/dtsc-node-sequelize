@@ -1,3 +1,5 @@
+//Jefferson Abreu
+
 import { DataTypes, Model } from "sequelize";
 
 class Tutor extends Model {
