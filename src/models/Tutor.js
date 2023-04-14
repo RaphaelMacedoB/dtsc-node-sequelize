@@ -61,6 +61,9 @@ class Tutor extends Model {
             }
         }, { sequelize, modelName: "tutor", tableName: "tutors" });
     }
+    static associate(models) {
+        this.belongsTo(models.district, { as: 'district', foreignKey: { name: 'districtId', allowNull: false, validate: { notNull: { msg: 'O bairro da Cidade deve ser preenchida!' } } } });
+    }
 }
 
 export { Tutor };
