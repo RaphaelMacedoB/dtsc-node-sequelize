@@ -24,8 +24,8 @@ class TypeOfOccurrence extends Model {
                 type: DataTypes.BOOLEAN,
                 allowNull: false,
                 validate: {
-                    notNull: { msg: "O CEP não pode ser nulo!" },
-                    notEmpty: { msg: "O CEP não pode ser vazio!" },
+                    notNull: { msg: "A flag de agressor não pode ser nulo!" },
+                    notEmpty: { msg: "A flag de agressor não pode ser vazio!" },
                 },
             }
         }, { sequelize, modelName: "typeOfOccurrence", tableName: "typeOfOccurrences" });
@@ -33,4 +33,4 @@ class TypeOfOccurrence extends Model {
     static associate(models) {}
 }
 
-export { Tutor };
+export { TypeOfOccurrence };

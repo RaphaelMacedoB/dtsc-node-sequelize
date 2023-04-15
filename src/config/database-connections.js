@@ -8,6 +8,7 @@ import { Tutor } from "../models/Tutor.js"
 import { DogSize } from "../models/DogSize.js";
 import { Breed } from "../models/Breed.js";
 import { Vaccine } from "../models/Vaccine.js";
+import { TypeOfOccurrence } from "../models/TypeOfOccurrence.js";
 const sequelize = new Sequelize(databaseConfig)
 
 Uf.init(sequelize)
@@ -17,6 +18,7 @@ Tutor.init(sequelize)
 DogSize.init(sequelize)
 Breed.init(sequelize)
 Vaccine.init(sequelize)
+TypeOfOccurrence.init(sequelize)
 
 Uf.associate(sequelize.models);
 City.associate(sequelize.models);
@@ -25,6 +27,7 @@ Tutor.associate(sequelize.models)
 DogSize.associate(sequelize.models)
 Breed.associate(sequelize.models)
 Vaccine.associate(sequelize.models)
+TypeOfOccurrence.associate(sequelize.models)
 
 databaseInserts();
 
@@ -81,6 +84,26 @@ function databaseInserts() {
         const vaccine2breed1 = await Vaccine.create({ name: "WYRT0", dosage_interval_days: "5", breedId: 2 })
         const vaccine3breed3 = await Vaccine.create({ name: "ADFH23", dosage_interval_days: "2", breedId: 3 })
 
+        const typeofoccurrence1 = await TypeOfOccurrence.create({
+            name: "Pata quebrada",
+            severity: 0.1,
+            aggressor: true
+        })
+        const typeofoccurrence2 = await TypeOfOccurrence.create({
+            name: "Ataque fuminante",
+            severity: 1.0,
+            aggressor: false
+        })
+        const typeofoccurrence3 = await TypeOfOccurrence.create({
+            name: "Ataque ao morador",
+            severity: 0.5,
+            aggressor: true
+        })
+        const typeofoccurrence4 = await TypeOfOccurrence.create({
+            name: "Atropelamento",
+            severity: 0.9,
+            aggressor: false
+        })
 
 
     })();
