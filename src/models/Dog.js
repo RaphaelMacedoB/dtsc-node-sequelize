@@ -32,11 +32,9 @@ class Dog extends Model {
         }, { sequelize, modelName: "dog", tableName: "dogs" });
     }
     static associate(models) {
-            this.belongsTo(models.breed, { as: 'breed', foreignKey: { name: 'breedId', allowNull: false, validate: { notNull: { msg: 'A raça da Cidade deve ser preenchida!' } } } });
-        }
-        /*static associate(models) {
-        this.belongsTo(models.uf, { as: 'uf', foreignKey: { name: 'ufId', allowNull: false, validate: { notNull: { msg: 'Uf da Cidade deve ser preenchida!' } } } });
-    }*/
+        this.belongsTo(models.breed, { as: 'breed', foreignKey: { name: 'breedId', allowNull: false, validate: { notNull: { msg: 'A raça da Cidade deve ser preenchida!' } } } });
+    }
+
 
 }
 
