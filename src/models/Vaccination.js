@@ -13,7 +13,11 @@ class Vaccination extends Model {
             }
         }, { sequelize, modelName: "vaccination", tableName: "vaccinations" });
     }
-    static associate(models) {}
+    static associate(models) {
+        this.belongsTo(models.vaccine, { as: 'vaccine', foreignKey: { name: 'vaccineId', allowNull: false, validate: { notNull: { msg: 'A Vacina deve ser previamente cadastrada!' } } } });
+        this.belongsTo(models.dog, { as: 'dog', foreignKey: { name: 'dogId', allowNull: false, validate: { notNull: { msg: 'O cão deve ser previamente cadastrado!' } } } });
+        this.belongsTo(models.employee, { as: 'employee', foreignKey: { name: 'employeeId', allowNull: false, validate: { notNull: { msg: 'O funcionário deve ser previamente cadastrado!' } } } });
+    }
 }
 
 export { Vaccination };
