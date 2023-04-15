@@ -1,8 +1,6 @@
-//Lucas Macedo Bernardino
-
+//Jefferson Abreu
 import { DataTypes, Model } from "sequelize";
-
-class Breed extends Model {
+class Veterinarian extends Model {
     static init(sequelize) {
         super.init({
             name: {
@@ -13,11 +11,9 @@ class Breed extends Model {
                     notEmpty: { msg: "O nome não pode ser vazio!" }
                 }
             }
-        }, { sequelize, modelName: "breed", tableName: "breeds" });
+        }, { sequelize, modelName: "veterinarian", tableName: "veterinarians" });
     }
-    static associate(models) {
-        this.belongsTo(models.dogSize, { as: 'dogSize', foreignKey: { name: 'dogSizeId', allowNull: false, validate: { notNull: { msg: 'O porte do cão deve ser preenchida!' } } } });
-    }
+    static associate(models) {}
 }
 
-export { Breed };
+export { Veterinarian };

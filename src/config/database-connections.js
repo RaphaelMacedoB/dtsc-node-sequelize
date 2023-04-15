@@ -9,6 +9,16 @@ import { DogSize } from "../models/DogSize.js";
 import { Breed } from "../models/Breed.js";
 import { Vaccine } from "../models/Vaccine.js";
 import { TypeOfOccurrence } from "../models/TypeOfOccurrence.js";
+import { Vaccination } from "../models/Vaccination.js";
+import { Dog } from "../models/Dog.js";
+import { Employee } from "../models/Employee.js";
+import { Veterinarian } from "../models/Veterinarian.js";
+import { Occurrence } from "../models/Occurrence.js";
+import { Guardianship } from "../models/Guardianship.js";
+
+
+
+
 const sequelize = new Sequelize(databaseConfig)
 
 Uf.init(sequelize)
@@ -19,6 +29,13 @@ DogSize.init(sequelize)
 Breed.init(sequelize)
 Vaccine.init(sequelize)
 TypeOfOccurrence.init(sequelize)
+Vaccination.init(sequelize)
+Dog.init(sequelize)
+Employee.init(sequelize)
+Veterinarian.init(sequelize)
+Occurrence.init(sequelize)
+Guardianship.init(sequelize)
+
 
 Uf.associate(sequelize.models);
 City.associate(sequelize.models);
@@ -28,9 +45,14 @@ DogSize.associate(sequelize.models)
 Breed.associate(sequelize.models)
 Vaccine.associate(sequelize.models)
 TypeOfOccurrence.associate(sequelize.models)
+Vaccination.associate(sequelize.models)
+Dog.associate(sequelize.models)
+Employee.associate(sequelize.models)
+Veterinarian.associate(sequelize.models)
+Occurrence.associate(sequelize.models)
+Guardianship.associate(sequelize.models)
 
 databaseInserts();
-
 
 function databaseInserts() {
     (async() => {
@@ -78,6 +100,9 @@ function databaseInserts() {
         const breed2 = await Breed.create({ name: "Golden retriever", dogSizeId: 5 })
         const breed3 = await Breed.create({ name: "Husky siberiano", dogSizeId: 3 })
         const breed4 = await Breed.create({ name: "Bull Terrier", dogSizeId: 3 })
+        const breed5 = await Breed.create({ name: "Fox Paulistinha", dogSizeId: 2 })
+
+        /*DOG*/
 
         const vaccine1breed1 = await Vaccine.create({ name: "AHS82", dosage_interval_days: "3", breedId: 1 })
         const vaccine1breed2 = await Vaccine.create({ name: "DJGH21", dosage_interval_days: "4", breedId: 1 })
@@ -106,6 +131,158 @@ function databaseInserts() {
         })
 
 
+        const dog1 = await Dog.create({
+            name: "Ópera",
+            weight: "14.0",
+            date_of_birth: "2020/05/14",
+            breedId: 5
+        })
+        const dog2 = await Dog.create({
+            name: "Jazz",
+            weight: "11.0",
+            date_of_birth: "2020/11/14",
+            breedId: 2
+        })
+        const dog3 = await Dog.create({
+            name: "Xena",
+            weight: "15.0",
+            date_of_birth: "2020/06/14",
+            breedId: 3
+        })
+        const dog4 = await Dog.create({
+            name: "Totó",
+            weight: "12.0",
+            date_of_birth: "2020/01/14",
+            breedId: 4
+        })
+
+        const employee1 = await Employee.create({
+            name: "Lucas Macedo Bernardino",
+            email: "lucasmacedoes@gmail.com",
+            login: "lukasombrado",
+            password: "Ab123!@#"
+        })
+        const employee2 = await Employee.create({
+            name: "Jefferson Abreu",
+            email: "download10@gmail.com",
+            login: "JAbt",
+            password: "asfgarh#"
+        })
+        const employee3 = await Employee.create({
+            name: "Lucas Macedo Bernardino",
+            email: "lucasmacedoes@gmail.com",
+            login: "lukasombrado",
+            password: "Ab123!@#"
+        })
+        const employee4 = await Employee.create({
+            name: "Lilian Macedo Bernardino",
+            email: "macedo123@gmail.com",
+            login: "macedobernardino",
+            password: "11346"
+        })
+
+        const veterinarian1 = await Veterinarian.create({
+            name: "Milena Macedo Bernardino",
+        })
+        const veterinarian2 = await Veterinarian.create({
+            name: "Mônica Macedo Bernardino",
+        })
+        const veterinarian3 = await Veterinarian.create({
+            name: "Paulo Macedo Bernardino",
+        })
+        const veterinarian4 = await Veterinarian.create({
+            name: "Carlos Eduardo",
+        })
+
+        const vaccination1 = await Vaccination.create({
+            date: "2021/03/28",
+            vaccineId: 1,
+            dogId: 1,
+            employeeId: 1,
+            veterinarianId: 1
+        })
+        const vaccination2 = await Vaccination.create({
+            date: "2021/03/28",
+            vaccineId: 2,
+            dogId: 1,
+            employeeId: 1,
+            veterinarianId: 1
+        })
+        const vaccination3 = await Vaccination.create({
+            date: "2020/02/28",
+            vaccineId: 2,
+            dogId: 2,
+            employeeId: 4,
+            veterinarianId: 2
+        })
+        const vaccination4 = await Vaccination.create({
+            date: "2020/02/28",
+            vaccineId: 3,
+            dogId: 1,
+            employeeId: 4,
+            veterinarianId: 4
+        })
+
+        const occurrence1 = await Occurrence.create({
+            description: "askmjfdjhgkwaerg",
+            date: "2000/02/15",
+            dog_health_state: "ÓTIMO",
+            veterinarianId: 1,
+            dogId: 1,
+            employeeId: 1,
+            typeOfOccurrenceId: 1
+        })
+        const occurrence2 = await Occurrence.create({
+            description: "aasdasdasdasdasdasdasdasdasdasdg",
+            date: "2000/03/12",
+            dog_health_state: "MAL",
+            veterinarianId: 1,
+            dogId: 2,
+            employeeId: 3,
+            typeOfOccurrenceId: 2
+        })
+        const occurrence3 = await Occurrence.create({
+            description: "aDESCRIÇÃO LINDArg",
+            date: "2021/04/12",
+            dog_health_state: "MAIS OU MENOS",
+            veterinarianId: 2,
+            dogId: 1,
+            employeeId: 3,
+            typeOfOccurrenceId: 4
+        })
+        const occurrence4 = await Occurrence.create({
+            description: "askmjfdjhgkwaerg",
+            date: "2003/02/15",
+            dog_health_state: "ÓTIMO",
+            veterinarianId: 1,
+            dogId: 1,
+            employeeId: 1,
+            typeOfOccurrenceId: 1
+        })
+        const guardianship1 = await Guardianship.create({
+            date: "2021/03/24",
+            dogId: 1,
+            employeeId: 3,
+            tutorId: 2
+        })
+        const guardianship2 = await Guardianship.create({
+            date: "2012/04/21",
+            dogId: 1,
+            employeeId: 2,
+            tutorId: 3
+        })
+        const guardianship3 = await Guardianship.create({
+            date: "2000/12/4",
+            dogId: 3,
+            employeeId: 2,
+            tutorId: 1
+        })
+        const guardianship4 = await Guardianship.create({
+            date: "2022/12/13",
+            dogId: 2,
+            employeeId: 3,
+            tutorId: 4
+        })
     })();
 }
 

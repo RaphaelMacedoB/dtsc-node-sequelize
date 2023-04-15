@@ -1,6 +1,6 @@
-//Raphael Macedo Bernardino
+//Lucas Macedo Bernardino
 import { DataTypes, Model } from "sequelize";
-class Vaccination extends Model {
+class Guardianship extends Model {
     static init(sequelize) {
         super.init({
             date: {
@@ -11,14 +11,14 @@ class Vaccination extends Model {
                     notEmpty: { msg: "A data não pode ser vazio!" }
                 }
             }
-        }, { sequelize, modelName: "vaccination", tableName: "vaccinations" });
+        }, { sequelize, modelName: "guardianship", tableName: "guardianships" });
     }
     static associate(models) {
-        this.belongsTo(models.vaccine, { as: 'vaccine', foreignKey: { name: 'vaccineId', allowNull: false, validate: { notNull: { msg: 'A Vacina deve ser previamente cadastrada!' } } } });
         this.belongsTo(models.dog, { as: 'dog', foreignKey: { name: 'dogId', allowNull: false, validate: { notNull: { msg: 'O cão deve ser previamente cadastrado!' } } } });
         this.belongsTo(models.employee, { as: 'employee', foreignKey: { name: 'employeeId', allowNull: false, validate: { notNull: { msg: 'O funcionário deve ser previamente cadastrado!' } } } });
-        this.belongsTo(models.veterinarian, { as: 'veterinarian', foreignKey: { name: 'veterinarianId', allowNull: false, validate: { notNull: { msg: 'O veterinário deve ser previamente cadastrado!' } } } });
+        this.belongsTo(models.tutor, { as: 'tutor', foreignKey: { name: 'tutorId', allowNull: false, validate: { notNull: { msg: 'O tutor deve ser previamente cadastrado!' } } } });
+
     }
 }
 
-export { Vaccination };
+export { Guardianship };
