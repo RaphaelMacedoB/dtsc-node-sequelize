@@ -2,7 +2,6 @@
 import { DataTypes, Model } from "sequelize";
 class Tutor extends Model {
     static init(sequelize) {
-        const phoneValidationRegex = /\d{3}-\d{3}-\d{4}/
         super.init({
             name: {
                 type: DataTypes.STRING,
