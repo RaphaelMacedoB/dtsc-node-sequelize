@@ -1,5 +1,11 @@
 import express from "express";
-// import sequelize from "./config/database-connections.js"; SQLITE
-import sequelize from "./config/database-connections-pg.js" // POSTGRES
+import sequelize from "./config/database-connections.js"; //SQLITE
+import routes from "./routes.js";
+//import sequelize from "./config/database-connections-pg.js" // POSTGRES
 const app = express();
-app.listen(3333, () => console.log('Server rodando na porta 3333'));
+
+app.use(express.json());
+app.use(routes);
+
+
+app.listen(3333);
