@@ -36,7 +36,7 @@ class UfService {
             await obj.destroy();
             return obj;
         } catch (error) {
-            throw "Não é possível remover uma UF que possui cidades!";
+            throw "Não é possível remover, há dependências!";
         }
     }
 

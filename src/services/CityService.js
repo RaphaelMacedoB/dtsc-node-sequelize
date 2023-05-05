@@ -46,7 +46,7 @@ class CityService {
             await obj.destroy();
             return obj;
         } catch (error) {
-            throw "Não é possível remover uma cidade com bairros!";
+            throw "Não é possível remover, há dependências!";
         }
     }
 
