@@ -1,5 +1,7 @@
 import { Dog } from "../models/Dog.js";
-
+/**
+ * @author Jefferson Abreu
+ */
 class DogService {
 
     static async findAll() {

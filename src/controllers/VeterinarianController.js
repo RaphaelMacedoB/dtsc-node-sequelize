@@ -1,5 +1,7 @@
 import { VeterinarianService } from "../services/VeterinarianService.js";
-
+/**
+ * @author Jefferson Abreu
+ */
 class VeterinarianController {
 
     static async findAll(req, res, next) {
