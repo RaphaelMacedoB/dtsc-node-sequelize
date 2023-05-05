@@ -46,7 +46,7 @@ class TutorService {
             await obj.destroy();
             return obj;
         } catch (error) {
-            throw "Não é possível remover um tutor cadastrado em um bairro!";
+            throw "Não é possível remover, há dependências!";
         }
     }
 
