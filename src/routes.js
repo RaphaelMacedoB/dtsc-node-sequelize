@@ -2,7 +2,7 @@ import express from "express";
 
 import { UfController } from './controllers/UfController.js';
 import { CityController } from "./controllers/CityController.js";
-
+import { DistrictController } from "./controllers/DistrictController.js"
 const routes = express.Router();
 
 routes.get('/ufs', UfController.findAll);
@@ -17,5 +17,11 @@ routes.post('/cidades', CityController.create);
 routes.put('/cidades/:id', CityController.update);
 routes.delete('/cidades/:id', CityController.delete);
 routes.get('/cidades/findByUf/:id', CityController.findByUf);
+
+routes.get('/bairros', DistrictController.findAll);
+routes.get('/bairros/:id', DistrictController.findByPk);
+routes.post('/bairros', DistrictController.create);
+routes.put('/bairros/:id', DistrictController.update);
+routes.delete('/bairros/:id', DistrictController.delete);
 
 export default routes;
