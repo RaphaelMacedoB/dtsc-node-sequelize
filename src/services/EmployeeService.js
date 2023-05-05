@@ -36,7 +36,7 @@ class EmployeeService {
             await obj.destroy();
             return obj;
         } catch (error) {
-            throw "Não é possível remover uma Employee que possui cidades!";
+            throw "Não é possível remover, há dependências!!";
         }
     }
 
