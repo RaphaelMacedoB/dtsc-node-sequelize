@@ -18,7 +18,7 @@ import { Guardianship } from "../models/Guardianship.js";
 
 
 
-const sequelize = new Sequelize('postgres://postgres:postgres@127.0.0.1:5432/dtsc')
+const sequelize = new Sequelize('postgres://postgres:root@127.0.0.1:5432/dtsc')
 
 
 Uf.init(sequelize)
