@@ -1,4 +1,4 @@
-//Lucas Macedo Bernardino
+//Raphael Macedo Bernardino
 import { DataTypes, Model } from "sequelize";
 class Employee extends Model {
     static init(sequelize) {
