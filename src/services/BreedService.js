@@ -1,5 +1,7 @@
 import { Breed } from "../models/Breed.js";
-
+/**
+ * @author Lucas Macedo Bernardino
+ */
 class BreedService {
 
     static async findAll() {

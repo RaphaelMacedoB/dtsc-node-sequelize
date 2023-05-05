@@ -1,5 +1,7 @@
 import { DogSize } from "../models/DogSize.js";
-
+/**
+ * @author Lucas Macedo Bernardino
+ */
 class DogSizeService {
 
     static async findAll() {
