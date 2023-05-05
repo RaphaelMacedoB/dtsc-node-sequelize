@@ -1,44 +1,44 @@
-import { DogService } from "../services/DogService.js";
+import { TypeOfOccurrence } from "../services/TypeOfOccurrence.js";
 /**
  * @author Jefferson Abreu
  */
-class DogController {
+class TypeOfOccurrenceController {
 
     static async findAll(req, res, next) {
-        DogService.findAll()
+        TypeOfOccurrence.findAll()
             .then(objs => res.json(objs))
             .catch(next);
     }
 
     static async findByPk(req, res, next) {
-        DogService.findByPk(req)
+        TypeOfOccurrence.findByPk(req)
             .then(obj => res.json(obj))
             .catch(next);
     }
     static async findByUf(req, res, next) {
-        DogService.findByDog(req)
+        TypeOfOccurrence.findByTypeOfOccurrence(req)
             .then(obj => res.json(obj))
             .catch(next);
     }
 
     static async create(req, res, next) {
-        DogService.create(req)
+        TypeOfOccurrence.create(req)
             .then(obj => res.json(obj))
             .catch(next);
     }
 
     static async update(req, res, next) {
-        DogService.update(req)
+        TypeOfOccurrence.update(req)
             .then(obj => res.json(obj))
             .catch(next);
     }
 
     static async delete(req, res, next) {
-        DogService.delete(req)
+        TypeOfOccurrence.delete(req)
             .then(obj => res.json(obj))
             .catch(next);
     }
 
 }
 
-export { DogController };
+export { TypeOfOccurrenceController };

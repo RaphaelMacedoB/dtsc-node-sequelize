@@ -1,5 +1,7 @@
-//Raphael Macedo Bernardino
 import { DataTypes, Model } from "sequelize";
+/**
+ * @author Jefferson Abreu
+ */
 class Occurrence extends Model {
     static init(sequelize) {
         super.init({
