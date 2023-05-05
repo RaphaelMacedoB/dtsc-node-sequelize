@@ -1,4 +1,4 @@
-//Raphael Macedo Bernardino
+//Lucas Macedo Bernardino
 
 import { DataTypes, Model } from "sequelize";
 

@@ -1,4 +1,4 @@
-//Raphael Macedo Bernardino
+//Jefferson Abreu
 import { DataTypes, Model } from "sequelize";
 class TypeOfOccurrence extends Model {
     static init(sequelize) {

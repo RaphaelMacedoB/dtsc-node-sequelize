@@ -1,4 +1,4 @@
-// Jefferson Abreu
+//Lucas Macedo Bernardino
 
 import { DataTypes, Model } from "sequelize";
 class DogSize extends Model {

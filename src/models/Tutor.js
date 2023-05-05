@@ -1,4 +1,4 @@
-//Jefferson Abreu
+//Raphael Macedo Bernardino
 import { DataTypes, Model } from "sequelize";
 class Tutor extends Model {
     static init(sequelize) {

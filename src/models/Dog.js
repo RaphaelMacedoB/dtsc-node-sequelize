@@ -1,4 +1,4 @@
-//Lucas Macedo Bernardino
+//Jefferson Abreu
 import { DataTypes, Model } from "sequelize";
 class Dog extends Model {
     static init(sequelize) {
