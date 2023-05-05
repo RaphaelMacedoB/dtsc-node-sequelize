@@ -38,7 +38,7 @@ class EmployeeService {
             await obj.destroy();
             return obj;
         } catch (error) {
-            throw "Não é possível remover, há dependências!!";
+            throw "Não é possível remover, há dependências!";
         }
     }
 
