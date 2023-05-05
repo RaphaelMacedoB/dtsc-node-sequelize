@@ -1,5 +1,7 @@
 import { Employee } from "../models/Employee.js";
-
+/**
+ * @author Raphael Macedo Bernardino
+ */
 class EmployeeService {
 
     static async findAll() {

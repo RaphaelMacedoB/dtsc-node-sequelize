@@ -1,5 +1,7 @@
 import { TutorService } from "../services/TutorService.js";
-
+/**
+ * @author Raphael Macedo Bernardino
+ */
 class TutorController {
 
     static async findAll(req, res, next) {

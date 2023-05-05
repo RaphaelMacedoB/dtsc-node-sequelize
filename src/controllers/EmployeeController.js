@@ -1,5 +1,7 @@
 import { EmployeeService } from "../services/EmployeeService.js";
-
+/**
+ * @author Raphael Macedo Bernardino
+ */
 class EmployeeController {
 
     static async findAll(req, res, next) {
