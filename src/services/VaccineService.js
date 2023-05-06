@@ -1,15 +1,15 @@
 
-import { Vaccine } from "../models/Vaccine.js";
-import { Breed } from "../models/Breed.js";
+import { Vaccine } from "../models/Vaccine.js"
+import { Breed } from "../models/Breed.js"
 /**
  * @author Lucas Macedo Bernardino
  */
-import sequelize from '../config/database-connection.js';
+import sequelize from '../config/database-connections.js';
 
 class VaccineService {
 
   static async findAll() {
-    const objs = await Filme.findAll({ include: { all: true, nested: true } });
+    const objs = await Vaccine.findAll({ include: { all: true, nested: true } });
     return objs;
   }
 
@@ -27,7 +27,7 @@ class VaccineService {
     try {
       await Promise.all(breeds.map(breed => obj.addBreeds(Breed.build(breed), { transaction: t })));
       await t.commit();
-      return await Filme.findByPk(obj.id, { include: { all: true, nested: true } });
+      return await Breed.findByPk(obj.id, { include: { all: true, nested: true } });
     } catch (error) {
       await t.rollback();
       throw "Uma das raças não foi informada corretamente!";
@@ -56,7 +56,7 @@ class VaccineService {
   static async delete(req) {
     const { id } = req.params;
     const obj = await Breed.findByPk(id);
-    if (obj == null) throw 'Filme não encontrado!';
+    if (obj == null) throw 'Raça não encontrada!';
     try {
       await obj.destroy();
       return obj;

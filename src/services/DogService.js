@@ -15,12 +15,6 @@ class DogService {
         return obj;
     }
 
-    static async findByDog(req) {
-        const { id } = req.params;
-        const objs = await Dog.findAll({ where: { dogId: id }, include: { all: true, nested: true } });
-        return objs;
-    }
-
     static async create(req) {
         const { name, weight, date_of_birth, breed } = req.body;
         if (breed == null) throw 'O Cão deve ter a Raça preenchida!';
@@ -51,7 +45,6 @@ class DogService {
             throw "Não é possível remover, há dependências!";
         }
     }
-
 }
 
 export { DogService };

@@ -15,12 +15,7 @@ class TypeOfOccurrenceController {
             .then(obj => res.json(obj))
             .catch(next);
     }
-    static async findByUf(req, res, next) {
-        TypeOfOccurrence.findByTypeOfOccurrence(req)
-            .then(obj => res.json(obj))
-            .catch(next);
-    }
-
+    
     static async create(req, res, next) {
         TypeOfOccurrence.create(req)
             .then(obj => res.json(obj))

@@ -15,11 +15,6 @@ class TutorController {
             .then(obj => res.json(obj))
             .catch(next);
     }
-    static async findByUf(req, res, next) {
-        TutorService.findByUf(req)
-            .then(obj => res.json(obj))
-            .catch(next);
-    }
 
     static async create(req, res, next) {
         TutorService.create(req)

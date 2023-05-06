@@ -15,11 +15,6 @@ class DogController {
             .then(obj => res.json(obj))
             .catch(next);
     }
-    static async findByUf(req, res, next) {
-        DogService.findByDog(req)
-            .then(obj => res.json(obj))
-            .catch(next);
-    }
 
     static async create(req, res, next) {
         DogService.create(req)

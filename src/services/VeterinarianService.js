@@ -41,7 +41,6 @@ class VeterinarianService {
             throw "Não é possível remover, há dependências!";
         }
     }
-
 }
 
 export { VeterinarianService };

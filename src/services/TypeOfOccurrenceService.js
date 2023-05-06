@@ -15,12 +15,6 @@ class TypeOfOccurrenceService {
         return obj;
     }
 
-    static async findByTypeOfOccurrence(req) {
-        const { id } = req.params;
-        const objs = await TypeOfOccurrence.findAll({ where: { typeOfOccurrenceId: id }, include: { all: true, nested: true } });
-        return objs;
-    }
-
     static async create(req) {
         const { name, severity, aggressor } = req.body;
         const obj = await TypeOfOccurrence.create({ name, severity, aggressor });
@@ -49,7 +43,6 @@ class TypeOfOccurrenceService {
             throw "Não é possível remover, há dependências!";
         }
     }
-
 }
 
 export { TypeOfOccurrenceService };

@@ -15,16 +15,10 @@ class TutorService {
         return obj;
     }
 
-    static async findByCity(req) {
-        const { id } = req.params;
-        const objs = await Tutor.findAll({ where: { districtId: id }, include: { all: true, nested: true } });
-        return objs;
-    }
-
     static async create(req) {
         const { name, house_number, zip_code, email, phone, public_place, date_of_birth, space_size, district } = req.body;
         if (district == null) throw 'O bairro do Tutor deve ser preenchido!';
-        const obj = await Tutor.create({ name, house_number,zip_code,email,phone_public_place,date_of_birth,space_size , districtId: district.id, });
+        const obj = await Tutor.create({ name, house_number,zip_code,email,phone,public_place,date_of_birth,space_size , districtId: district.id, });
         return await Tutor.findByPk(obj.id, { include: { all: true, nested: true } });
     }
 

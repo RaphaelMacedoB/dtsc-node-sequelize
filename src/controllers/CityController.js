@@ -13,11 +13,6 @@ class CityController {
             .then(obj => res.json(obj))
             .catch(next);
     }
-    static async findByUf(req, res, next) {
-        CityService.findByUf(req)
-            .then(obj => res.json(obj))
-            .catch(next);
-    }
 
     static async create(req, res, next) {
         CityService.create(req)

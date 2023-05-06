@@ -15,11 +15,6 @@ class BreedService {
         return obj;
     }
 
-    static async findByDogSize(req) {
-        const { id } = req.params;
-        const objs = await Breed.findAll({ where: { dogSizeId: id }, include: { all: true, nested: true } });
-        return objs;
-    }
     static async create(req) {
         const { name, dogSize } = req.body;
         if (dogSize == null) throw 'O porte do Cão deve ser preenchido!';
@@ -49,7 +44,6 @@ class BreedService {
             throw "Não é possível remover, há dependências!";
         }
     }
-
 }
 
 export { BreedService };
