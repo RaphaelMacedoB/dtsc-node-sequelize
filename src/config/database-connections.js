@@ -107,10 +107,16 @@ function databaseInserts() {
 
         /*DOG*/
 
-        const vaccine1breed1 = await Vaccine.create({ name: "AHS82", dosage_interval_days: "3", breedId: 1 })
-        const vaccine1breed2 = await Vaccine.create({ name: "DJGH21", dosage_interval_days: "4", breedId: 1 })
-        const vaccine2breed1 = await Vaccine.create({ name: "WYRT0", dosage_interval_days: "5", breedId: 2 })
-        const vaccine3breed3 = await Vaccine.create({ name: "ADFH23", dosage_interval_days: "2", breedId: 3 })
+        const vaccine1 = await Vaccine.create({ name: "AHS82", dosage_interval_days: "3"})
+        const vaccine2 = await Vaccine.create({ name: "DJGH21", dosage_interval_days: "4"})
+        const vaccine3 = await Vaccine.create({ name: "WYRT0", dosage_interval_days: "5"})
+        const vaccine4 = await Vaccine.create({ name: "ADFH23", dosage_interval_days: "2"})
+
+        await vaccine1.addBreeds(breed1, {through: "vaccine_breed"})
+        await vaccine2.addBreeds(breed2, {through: "vaccine_breed"})
+        await vaccine3.addBreeds(breed3, {through: "vaccine_breed"})
+        await vaccine4.addBreeds(breed4, {through: "vaccine_breed"})
+        await vaccine4.addBreeds(breed5, {through: "vaccine_breed"})
 
         const typeofoccurrence1 = await TypeOfOccurrence.create({
             name: "Pata quebrada",
