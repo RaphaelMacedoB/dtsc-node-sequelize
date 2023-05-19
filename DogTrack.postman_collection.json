@@ -1,0 +1,25 @@
+{
+	"info": {
+		"_postman_id": "85edb680-a508-4d9d-8a4c-32b7af516e56",
+		"name": "DogTrack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dog",
+			"item": []
+		},
+		{
+			"name": "Occurrence",
+			"item": []
+		},
+		{
+			"name": "TypeOfOccurrence",
+			"item": []
+		},
+		{
+			"name": "Veterinarian",
+			"item": []
+		}
+	]
+}
