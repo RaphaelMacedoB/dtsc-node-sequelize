@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "85edb680-a508-4d9d-8a4c-32b7af516e56",
+		"_postman_id": "ad130ad4-7863-4c91-843d-4450f648e2c9",
 		"name": "DogTrack",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13171365"
 	},
 	"item": [
 		{
@@ -20,6 +21,200 @@
 		{
 			"name": "Veterinarian",
 			"item": []
+		},
+		{
+			"name": "Vacina",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"ASDX4\",\r\n        \"dosage_interval_days\": 3,\r\n        \"breeds\":[\r\n            {\"id\": 1}\r\n            ]\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/vacinas",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"vacinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/vacinas",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"vacinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/vacinas/1",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"vacinas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/vacinas/8",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"vacinas",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutela",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"tutelas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas/1",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"tutelas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2020/04/21\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"tutelas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
