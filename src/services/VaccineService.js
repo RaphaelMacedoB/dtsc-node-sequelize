@@ -42,7 +42,7 @@ class VaccineService {
     const t = await sequelize.transaction();
     Object.assign(obj, { name, dosage_interval_days, breeds });
     await obj.save({ transaction: t });
-    await sequelize.models.vaccine_breed.destroy({ where: { VaccineId: obj.id }, transaction: t });
+    await sequelize.models.vaccine_breed.destroy({ where: { vaccineId: obj.id }, transaction: t });
     try {
       await Promise.all(breeds.map(breed => obj.addBreeds(Breed.build(breed), { transaction: t })));
       await t.commit();
@@ -55,8 +55,8 @@ class VaccineService {
 
   static async delete(req) {
     const { id } = req.params;
-    const obj = await Breed.findByPk(id);
-    if (obj == null) throw 'Raça não encontrada!';
+    const obj = await Vaccine.findByPk(id);
+    if (obj == null) throw 'Vacina não encontrada!';
     try {
       await obj.destroy();
       return obj;
