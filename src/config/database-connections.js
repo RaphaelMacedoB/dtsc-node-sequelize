@@ -231,7 +231,6 @@ function databaseInserts() {
             employeeId: 4,
             veterinarianId: 4
         })
-
         const occurrence1 = await Occurrence.create({
             description: "askmjfdjhgkwaerg",
             date: "2000/02/15",
