@@ -11,6 +11,7 @@ import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceContro
 import { DogSizeController } from "./controllers/DogSizeController.js"
 import { DogController } from "./controllers/DogController.js"
 import { VeterinarianController } from "./controllers/VeterinarianController.js"
+import { GuardianshipController } from "./controllers/GuardianshipController.js"
 const routes = express.Router();
 
 routes.get('/ufs', UfController.findAll);
@@ -78,6 +79,12 @@ routes.get('/veterinarios/:id', VeterinarianController.findByPk);
 routes.post('/veterinarios', VeterinarianController.create);
 routes.put('/veterinarios/:id', VeterinarianController.update);
 routes.delete('/veterinarios/:id', VeterinarianController.delete);
+
+routes.get('/tutelas', GuardianshipController.findAll);
+routes.get('/tutelas/:id', GuardianshipController.findByPk);
+routes.post('/tutelas', GuardianshipController.create);
+routes.put('/tutelas/:id', GuardianshipController.update);
+routes.delete('/tutelas/:id', GuardianshipController.delete);
 
 
 export default routes;

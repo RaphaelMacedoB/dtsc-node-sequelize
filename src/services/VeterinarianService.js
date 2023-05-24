@@ -1,6 +1,6 @@
 import { Veterinarian } from "../models/Veterinarian.js";
 /**
- * @author Jefferson Abreu
+ * @author Lucas Macedo Bernardino
  */
 class VeterinarianService {
 
