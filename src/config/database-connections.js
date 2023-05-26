@@ -291,6 +291,19 @@ function databaseInserts() {
             employeeId: 3,
             tutorId: 4
         })
+        const guardianship5 = await Guardianship.create({
+            date: "2022/12/13",
+            dogId: 2,
+            employeeId: 3,
+            tutorId: 1
+        })
+
+        const guardianship6 = await Guardianship.create({
+            date: "2022/12/13",
+            dogId: 2,
+            employeeId: 3,
+            tutorId: 1
+        })
     })();
 }
 

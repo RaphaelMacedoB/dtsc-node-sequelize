@@ -1,6 +1,5 @@
-
 import { Guardianship } from "../models/Guardianship.js"
-
+import { Tutor } from "../models/Tutor.js";
 /**
  * @author Raphael Macedo Bernardino
  */
@@ -19,14 +18,39 @@ class GuardianshipService {
     return obj;
   }
 
+  static async findByTutor(req){
+    const { tutor } = req.body;
+    const objs = await Guardianship.findAll({ where: { tutorId: tutor.id}, include: { all: true, nested: true }})
 
+    
+    return objs;
+  }
+
+  static async verificarEspacoTotalTutor(req){ //regra 1
+    const { tutor} = req.body;
+    const currentTutor = await Tutor.findByPk(tutor.id, { include: { all: true, nested: true }});
+    const guardas = await this.findByTutor(req);
+    var soma = 0;
+    guardas.forEach((guarda) => {
+      soma = soma + guarda.dog.breed.dogSize.occupied_size
+    })
+    if(soma <= currentTutor.space_size){
+      return true;  
+    }else{
+      return false;
+    }
+  }
+
+  
   static async create(req) {
     const { date, dog, employee, tutor } = req.body;
+    if (date == null) throw 'A data deve ser preenchida!';
     if (dog == null) throw 'O Cachorro deve ser preenchido!';
     if (employee == null) throw 'O funcionário deve ser preenchido!';
     if (tutor == null) throw 'O Tutor deve ser preenchido!';
-    const obj = await Guardianship.create({ date, dogId: dog.id, 'employeeId':employee.id, 'tutorId': tutor.id });
-    return await Guardianship.findByPk(obj.id, { include: { all: true, nested: true } });
+    const verificarEspacoTotalTutor = await this.verificarEspacoTotalTutor(req);
+    if (!verificarEspacoTotalTutor) throw 'O Tutor não possui espaço suficiente para adotar o cachorro!'; 
+    return await Guardianship.create({date: date, dogId: dog.id, employeeId: employee.id, tutorId:tutor.id}, { include: { all: true, nested: true } });
   }
 
   static async update(req) {
@@ -50,5 +74,8 @@ class GuardianshipService {
     await obj.destroy();
     return obj;
   }
+  
+
+ 
 }
 export { GuardianshipService };
