@@ -26,7 +26,11 @@ class GuardianshipService {
     return objs;
   }
 
-  static async verificarEspacoTotalTutor(req){ //regra 1
+  static async verificarEspacoTotalTutor(req){ 
+    // regra 1
+    // Certifique-se de que o 
+    // tamanho do espaço no ambiente onde o cão estará é 
+    // adequado ao tipo de cão e tamanho/necessidades do cão
     const { tutor} = req.body;
     const currentTutor = await Tutor.findByPk(tutor.id, { include: { all: true, nested: true }});
     const guardas = await this.findByTutor(req);
@@ -42,6 +46,8 @@ class GuardianshipService {
   }
 
   static async totalAdocoesPorTutor(req){
+    //regra 2 
+    // O tutor só poderá ter no máximo 3 adoções.
     const { tutor } = req.body;
     const totalAdocoesPorTudo = await sequelize.query(`SELECT COUNT(*) AS total_adoptions
     FROM guardianships
