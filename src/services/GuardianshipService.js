@@ -26,7 +26,11 @@ class GuardianshipService {
     return objs;
   }
 
-  static async verificarEspacoTotalTutor(req){ //regra 1
+  static async verificarEspacoTotalTutor(req){ 
+    // regra 1
+    // Certifique-se de que o 
+    // tamanho do espaço no ambiente onde o cão estará é 
+    // adequado ao tipo de cão e tamanho/necessidades do cão
     const { tutor} = req.body;
     const currentTutor = await Tutor.findByPk(tutor.id, { include: { all: true, nested: true }});
     const guardas = await this.findByTutor(req);
@@ -41,6 +45,17 @@ class GuardianshipService {
     }
   }
 
+  static async totalAdocoesPorTutor(req){
+    //regra 2 
+    // O tutor só poderá ter no máximo 3 adoções.
+    const { tutor } = req.body;
+    const totalAdocoesPorTudo = await sequelize.query(`SELECT COUNT(*) AS total_adoptions
+    FROM guardianships
+    WHERE tutor_id = ${tutor.id};`);
+
+    return totalAdocoesPorTudo[0][0].total_adoptions;
+  }
+
   
   static async create(req) {
     const { date, dog, employee, tutor } = req.body;
@@ -49,7 +64,9 @@ class GuardianshipService {
     if (employee == null) throw 'O funcionário deve ser preenchido!';
     if (tutor == null) throw 'O Tutor deve ser preenchido!';
     const verificarEspacoTotalTutor = await this.verificarEspacoTotalTutor(req);
+    const totalAdocoesPorTudo = await this.totalAdocoesPorTutor(req);
     if (!verificarEspacoTotalTutor) throw 'O Tutor não possui espaço suficiente para adotar o cachorro!'; 
+    if (totalAdocoesPorTudo > 3) throw 'O Tutor pode ter no máximo três adoções !'
     return await Guardianship.create({date: date, dogId: dog.id, employeeId: employee.id, tutorId:tutor.id}, { include: { all: true, nested: true } });
   }
 
