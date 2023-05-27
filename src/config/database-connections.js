@@ -210,6 +210,13 @@ function databaseInserts() {
             employeeId: 1,
             veterinarianId: 1
         })
+        const vaccination5 = await Vaccination.create({
+            date: "2021/03/50",
+            vaccineId: 1,
+            dogId: 1,
+            employeeId: 1,
+            veterinarianId: 1
+        })
         const vaccination2 = await Vaccination.create({
             date: "2021/03/28",
             vaccineId: 2,

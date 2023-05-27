@@ -12,6 +12,8 @@ import { DogSizeController } from "./controllers/DogSizeController.js"
 import { DogController } from "./controllers/DogController.js"
 import { VeterinarianController } from "./controllers/VeterinarianController.js"
 import { GuardianshipController } from "./controllers/GuardianshipController.js"
+import { VaccinationController } from "./controllers/VaccinationController.js";
+
 const routes = express.Router();
 
 routes.get('/ufs', UfController.findAll);
@@ -85,6 +87,13 @@ routes.get('/tutelas/:id', GuardianshipController.findByPk);
 routes.post('/tutelas', GuardianshipController.create);
 routes.put('/tutelas/:id', GuardianshipController.update);
 routes.delete('/tutelas/:id', GuardianshipController.delete);
+
+routes.get('/vaccinations', VaccinationController.findAll);
+routes.get('/vaccinations/:id', VaccinationController.findByPk);
+routes.post('/vaccinations', VaccinationController.create);
+routes.put('/vaccinations/:id', VaccinationController.update);
+routes.delete('/vaccinations/:id', VaccinationController.delete);
+
 
 
 export default routes;

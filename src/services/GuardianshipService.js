@@ -27,7 +27,7 @@ class GuardianshipService {
   }
 
   static async verificarEspacoTotalTutor(req){ //regra 1
-    const { tutor} = req.body;
+    const { tutor } = req.body;
     const currentTutor = await Tutor.findByPk(tutor.id, { include: { all: true, nested: true }});
     const guardas = await this.findByTutor(req);
     var soma = 0;
