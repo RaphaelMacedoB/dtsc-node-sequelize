@@ -2,16 +2,18 @@ import express from "express";
 
 import { UfController } from './controllers/UfController.js';
 import { CityController } from "./controllers/CityController.js";
-import { DistrictController } from "./controllers/DistrictController.js"
-import { TutorController } from "./controllers/TutorController.js"
-import { VaccineController } from "./controllers/VaccineController.js"
-import { BreedController } from "./controllers/BreedController.js"
-import { EmployeeController } from "./controllers/EmployeeController.js"
-import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceController.js"
-import { DogSizeController } from "./controllers/DogSizeController.js"
-import { DogController } from "./controllers/DogController.js"
-import { VeterinarianController } from "./controllers/VeterinarianController.js"
-import { GuardianshipController } from "./controllers/GuardianshipController.js"
+import { DistrictController } from "./controllers/DistrictController.js";
+import { TutorController } from "./controllers/TutorController.js";
+import { VaccineController } from "./controllers/VaccineController.js";
+import { BreedController } from "./controllers/BreedController.js";
+import { EmployeeController } from "./controllers/EmployeeController.js";
+import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceController.js";
+import { DogSizeController } from "./controllers/DogSizeController.js";
+import { DogController } from "./controllers/DogController.js";
+import { VeterinarianController } from "./controllers/VeterinarianController.js";
+import { GuardianshipController } from "./controllers/GuardianshipController.js";
+import { OccurrenceController } from "./controllers/OccurrenceController.js";
+
 const routes = express.Router();
 
 routes.get('/ufs', UfController.findAll);
@@ -74,6 +76,12 @@ routes.post('/caes', DogController.create);
 routes.put('/caes/:id', DogController.update);
 routes.delete('/caes/:id', DogController.delete);
 
+routes.get('/dogs', DogController.findAll);
+routes.get('/dogs/:id', DogController.findByPk);
+routes.post('/dogs', DogController.create);
+routes.put('/dogs/:id', DogController.update);
+routes.delete('/dogs/:id', DogController.delete);
+
 routes.get('/veterinarios', VeterinarianController.findAll);
 routes.get('/veterinarios/:id', VeterinarianController.findByPk);
 routes.post('/veterinarios', VeterinarianController.create);
@@ -85,6 +93,12 @@ routes.get('/tutelas/:id', GuardianshipController.findByPk);
 routes.post('/tutelas', GuardianshipController.create);
 routes.put('/tutelas/:id', GuardianshipController.update);
 routes.delete('/tutelas/:id', GuardianshipController.delete);
+
+routes.get('/occurrences', OccurrenceController.findAll);
+routes.get('/occurrences/:id', OccurrenceController.findByPk);
+routes.post('/occurrences', OccurrenceController.create);
+routes.put('/occurrences/:id', OccurrenceController.update);
+routes.delete('/occurrences/:id', OccurrenceController.delete);
 
 
 export default routes;

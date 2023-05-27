@@ -1,12 +1,12 @@
 import { Occurrence } from "../models/Occurrence.js";
 
-import sequelize from '../config/database-connection.js';
+import sequelize from '../config/database-connections.js';
 import { QueryTypes } from 'sequelize';
 /**
  * @author Jefferson Abreu
  */
 class OccurrenceService {
-
+  
   static async findAll() {
     const objs = await Occurrence.findAll({ include: { all: true, nested: true } });
     return objs;
@@ -19,10 +19,10 @@ class OccurrenceService {
   }
 
   static async create(req) {
-    const { data, status, cliente, fita } = req.body;
-    if (cliente == null) throw 'O Cliente da Reserva deve ser preenchido!';
-    if (fita == null) throw 'A Fita da Reserva deve ser preenchida!';
-    const obj = await Occurrence.create({ data, status, clienteId: cliente.id, fitaId: fita.id });
+    const { date, description, dog_health_state, dog, employee, veterinarian, typeOfOccurrence } = req.body;
+    // if (dog == null) throw 'O Cliente da Reserva deve ser preenchido!';
+    // if (fita == null) throw 'A Fita da Reserva deve ser preenchida!';
+    const obj = await Occurrence.create({ date, description, dog_health_state, dog, employee, veterinarian, typeOfOccurrence });
     return await Occurrence.findByPk(obj.id, { include: { all: true, nested: true } });
   }
 
@@ -45,15 +45,6 @@ class OccurrenceService {
     await obj.destroy();
     return obj;
   }
-
-  static async findByFitaAndStatusRN(fitaId, status) {
-    const objs = await sequelize.query(
-      "SELECT * FROM reservas WHERE reservas.fita_id = :fitaId AND reservas.status = :status",
-      { replacements: { fitaId: fitaId, status: status }, type: QueryTypes.SELECT }
-    );
-    return objs;
-  }
-
 }
 
-export { OccurrenceService};
+export { OccurrenceService };

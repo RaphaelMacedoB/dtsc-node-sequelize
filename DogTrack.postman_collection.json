@@ -175,7 +175,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2023/05/12\",\r\n    \"description\": \"Cão foi atropelado na garagem.\",\r\n    \"dog_health_state\": \"Pata machucou, mas nada grave\",\r\n    \"dog\": {\r\n        \"id\": 1\r\n    },\r\n    \"employee\": {\r\n        \"id\": 1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\": 1\r\n    },\r\n    \"typeOfOccurrence\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"date\": \"2023-05-12\",\r\n    \"description\": \"Cão foi atropelado na garagem.\",\r\n    \"dog_health_state\": \"Pata machucou, mas nada grave\",\r\n    \"dog\": {\r\n        \"id\": 1\r\n    },\r\n    \"employee\": {\r\n        \"id\": 1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\": 1\r\n    },\r\n    \"typeOfOccurrence\": {\r\n        \"id\": 1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
