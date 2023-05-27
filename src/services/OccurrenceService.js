@@ -6,7 +6,7 @@ import { QueryTypes } from 'sequelize';
  * @author Jefferson Abreu
  */
 class OccurrenceService {
-
+  
   static async findAll() {
     const objs = await Occurrence.findAll({ include: { all: true, nested: true } });
     return objs;
@@ -54,7 +54,6 @@ class OccurrenceService {
     await obj.destroy();
     return obj;
   }
-
 }
 
-export { OccurrenceService};
+export { OccurrenceService };

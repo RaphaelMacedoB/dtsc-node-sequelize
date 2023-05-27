@@ -1,26 +1,581 @@
 {
 	"info": {
-		"_postman_id": "5fa801c9-8ac0-4c49-bb0e-60ee2e235219",
 		"name": "DogTrack",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "27612427"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Dog",
-			"item": []
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Riri\",\r\n    \"weight\": 2.3,\r\n    \"date_of_birth\": \"2023/03/16\",\r\n    \"breeds\": [\r\n        {\r\n            \"id\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/dogs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Riri\",\r\n    \"weight\": 1.1,\r\n    \"date_of_birth\": \"2023/03/11\",\r\n    \"breeds\": [\r\n        {\r\n            \"id\": \"2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/dogs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Occurrence",
-			"item": []
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/occurrences",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/occurrences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023-05-12\",\r\n    \"description\": \"Cão foi atropelado na garagem.\",\r\n    \"dog_health_state\": \"Pata machucou, mas nada grave\",\r\n    \"dog\": {\r\n        \"id\": 1\r\n    },\r\n    \"employee\": {\r\n        \"id\": 1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\": 1\r\n    },\r\n    \"typeOfOccurrence\": {\r\n        \"id\": 1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/occurrences",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023/05/12\",\r\n    \"description\": \"Cão foi atropelado na garagem.\",\r\n    \"dog_health_state\": \"Pata não quebrou, está bem!\",\r\n    \"dog\": {\r\n        \"id\": 2\r\n    },\r\n    \"employee\": {\r\n        \"id\": 2\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\": 2\r\n    },\r\n    \"typeOfOccurrence\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/occurrences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/occurrences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "TypeOfOccurrence",
-			"item": []
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/typeofoccurrences",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"typeofoccurrences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/typeofoccurrences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"typeofoccurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mordida\",\r\n    \"severity\": 6.0,\r\n    \"aggressor\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/typeofoccurrences",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"typeofoccurrences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mordida\",\r\n    \"severity\": 6.1,\r\n    \"aggressor\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/typeofoccurrences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"typeofoccurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/typeofoccurrences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"typeofoccurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Veterinarian",
-			"item": []
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/veterinarians",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"veterinarians"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/veterinarians/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"veterinarians",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Mariana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/veterinarians",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"veterinarians"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Mariana Click\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/veterinarians/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"veterinarians",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/veterinarians/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"veterinarians",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutela",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"tutelas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas/1",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"tutelas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2020/04/21\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas",
+							"protocol": "https",
+							"host": [
+								"dtsc-node-sequelize",
+								"raphaelbernard1",
+								"repl",
+								"co"
+							],
+							"path": [
+								"tutelas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "UF",
@@ -30,7 +585,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/ufs"
+						"url": {
+							"raw": "http://localhost:3333/ufs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"ufs"
+							]
+						}
 					},
 					"response": []
 				},
@@ -39,7 +604,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/ufs/1"
+						"url": {
+							"raw": "http://localhost:3333/ufs/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"ufs",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -57,7 +633,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/ufs"
+						"url": {
+							"raw": "http://localhost:3333/ufs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"ufs"
+							]
+						}
 					},
 					"response": []
 				},
@@ -75,7 +661,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/ufs/3"
+						"url": {
+							"raw": "http://localhost:3333/ufs/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"ufs",
+								"3"
+							]
+						}
 					},
 					"response": []
 				},
@@ -93,7 +690,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/ufs/3"
+						"url": {
+							"raw": "http://localhost:3333/ufs/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"ufs",
+								"3"
+							]
+						}
 					},
 					"response": []
 				}
@@ -107,7 +715,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/cidades/"
+						"url": {
+							"raw": "http://localhost:3333/cidades/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cidades",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -116,7 +735,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/cidades/1"
+						"url": {
+							"raw": "http://localhost:3333/cidades/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cidades",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -134,7 +764,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/cidades"
+						"url": {
+							"raw": "http://localhost:3333/cidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cidades"
+							]
+						}
 					},
 					"response": []
 				},
@@ -152,7 +792,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/cidades/5"
+						"url": {
+							"raw": "http://localhost:3333/cidades/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cidades",
+								"5"
+							]
+						}
 					},
 					"response": []
 				},
@@ -170,7 +821,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/cidades/5"
+						"url": {
+							"raw": "http://localhost:3333/cidades/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cidades",
+								"5"
+							]
+						}
 					},
 					"response": []
 				}
@@ -184,7 +846,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/bairros/"
+						"url": {
+							"raw": "http://localhost:3333/bairros/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"bairros",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -193,7 +866,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/bairros/1"
+						"url": {
+							"raw": "http://localhost:3333/bairros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"bairros",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -211,7 +895,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/bairros"
+						"url": {
+							"raw": "http://localhost:3333/bairros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"bairros"
+							]
+						}
 					},
 					"response": []
 				},
@@ -229,7 +923,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/bairros/5"
+						"url": {
+							"raw": "http://localhost:3333/bairros/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"bairros",
+								"5"
+							]
+						}
 					},
 					"response": []
 				},
@@ -247,7 +952,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/bairros/5"
+						"url": {
+							"raw": "http://localhost:3333/bairros/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"bairros",
+								"5"
+							]
+						}
 					},
 					"response": []
 				}
@@ -261,7 +977,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/portes/"
+						"url": {
+							"raw": "http://localhost:3333/portes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"portes",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -270,7 +997,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/portes/1"
+						"url": {
+							"raw": "http://localhost:3333/portes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"portes",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -288,7 +1026,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/portes"
+						"url": {
+							"raw": "http://localhost:3333/portes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"portes"
+							]
+						}
 					},
 					"response": []
 				},
@@ -306,7 +1054,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/portes/6"
+						"url": {
+							"raw": "http://localhost:3333/portes/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"portes",
+								"6"
+							]
+						}
 					},
 					"response": []
 				},
@@ -324,7 +1083,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/portes/6"
+						"url": {
+							"raw": "http://localhost:3333/portes/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"portes",
+								"6"
+							]
+						}
 					},
 					"response": []
 				}
@@ -338,7 +1108,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/racas/"
+						"url": {
+							"raw": "http://localhost:3333/racas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"racas",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -347,7 +1128,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/racas/1"
+						"url": {
+							"raw": "http://localhost:3333/racas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"racas",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
@@ -365,7 +1157,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/racas"
+						"url": {
+							"raw": "http://localhost:3333/racas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"racas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -383,7 +1185,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/racas/6"
+						"url": {
+							"raw": "http://localhost:3333/racas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"racas",
+								"6"
+							]
+						}
 					},
 					"response": []
 				},
@@ -401,7 +1214,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/racas/6"
+						"url": {
+							"raw": "http://localhost:3333/racas/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"racas",
+								"6"
+							]
+						}
 					},
 					"response": []
 				}
@@ -415,7 +1239,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/vacinas/"
+						"url": {
+							"raw": "http://localhost:3333/vacinas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vacinas",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -424,7 +1259,18 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:3333/vacinas/5"
+						"url": {
+							"raw": "http://localhost:3333/vacinas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vacinas",
+								"5"
+							]
+						}
 					},
 					"response": []
 				},
@@ -442,7 +1288,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/vacinas"
+						"url": {
+							"raw": "http://localhost:3333/vacinas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vacinas"
+							]
+						}
 					},
 					"response": []
 				},
@@ -460,7 +1316,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/vacinas/5"
+						"url": {
+							"raw": "http://localhost:3333/vacinas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vacinas",
+								"5"
+							]
+						}
 					},
 					"response": []
 				},
@@ -478,123 +1345,118 @@
 								}
 							}
 						},
-						"url": "http://localhost:3333/portes/6"
+						"url": {
+							"raw": "http://localhost:3333/portes/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"portes",
+								"6"
+							]
+						}
 					},
 					"response": []
 				}
 			]
 		},
 		{
-			"name": "Guardianship",
+			"name": "Vaccination",
 			"item": [
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2023/05/26\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:3333/tutelas"
-					},
-					"response": []
-				},
-				{
-					"name": "regra1",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2023/06/24\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\" : {\"id\": 1},\r\n    \"tutor\": {\"id\": 2}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:3333/tutelas"
-					},
-					"response": []
-				},
-				{
-					"name": "regra2",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2023/05/26\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 2}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:3333/tutelas"
-					},
-					"response": []
-				},
 				{
 					"name": "findAll",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": "http://localhost:3333/tutelas"
+						"header": []
 					},
 					"response": []
 				},
 				{
-					"name": "delete",
+					"name": "createRegra1",
 					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:3333/tutelas/1"
-					},
-					"response": []
-				},
-				{
-					"name": "findByPk",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2012-04-22\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 2},\r\n    \"tutor\": {\"id\": 3}\r\n\r\n}",
+							"raw": "{\r\n    \"date\": \"2023/05/29\",\r\n    \"vaccine\": {\r\n        \"id\":1\r\n    },\r\n    \"dog\": {\r\n        \"id\":1\r\n    },\r\n    \"employee\": {\r\n        \"id\":1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:3333/tutelas/2"
+						"url": {
+							"raw": "http://localhost:3333/vaccinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vaccinations",
+								""
+							]
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "update",
+					"name": "createRegra2",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2012-04-22\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 2},\r\n    \"tutor\": {\"id\": 3}\r\n}",
+							"raw": "{\r\n    \"date\": \"2023/05/29\",\r\n    \"vaccine\": {\r\n        \"id\":1\r\n    },\r\n    \"dog\": {\r\n        \"id\":1\r\n    },\r\n    \"employee\": {\r\n        \"id\":1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\":1\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:3333/tutelas/2"
+						"url": {
+							"raw": "http://localhost:3333/vaccinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vaccinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023/05/29\",\r\n    \"vaccine\": {\r\n        \"id\":1\r\n    },\r\n    \"dog\": {\r\n        \"id\":1\r\n    },\r\n    \"employee\": {\r\n        \"id\":1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/vaccinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vaccinations",
+								""
+							]
+						}
 					},
 					"response": []
 				}
