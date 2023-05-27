@@ -26,17 +26,8 @@ class GuardianshipService {
     return objs;
   }
 
-<<<<<<< HEAD
   static async verificarEspacoTotalTutor(req){ //regra 1
     const { tutor } = req.body;
-=======
-  static async verificarEspacoTotalTutor(req){ 
-    // regra 1
-    // Certifique-se de que o 
-    // tamanho do espaço no ambiente onde o cão estará é 
-    // adequado ao tipo de cão e tamanho/necessidades do cão
-    const { tutor} = req.body;
->>>>>>> 438dc40d8d34ccdd6a3015d4ae5a762ab659f67f
     const currentTutor = await Tutor.findByPk(tutor.id, { include: { all: true, nested: true }});
     const guardas = await this.findByTutor(req);
     var soma = 0;
