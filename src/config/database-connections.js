@@ -210,6 +210,13 @@ function databaseInserts() {
             employeeId: 1,
             veterinarianId: 1
         })
+        const vaccination5 = await Vaccination.create({
+            date: "2021/03/50",
+            vaccineId: 1,
+            dogId: 1,
+            employeeId: 1,
+            veterinarianId: 1
+        })
         const vaccination2 = await Vaccination.create({
             date: "2021/03/28",
             vaccineId: 2,
@@ -290,6 +297,12 @@ function databaseInserts() {
             dogId: 2,
             employeeId: 3,
             tutorId: 4
+        })
+        const guardianship5 = await Guardianship.create({
+            date: "2022/12/13",
+            dogId: 2,
+            employeeId: 3,
+            tutorId: 1
         })
     })();
 }
