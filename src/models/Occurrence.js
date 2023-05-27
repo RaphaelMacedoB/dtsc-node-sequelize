@@ -17,16 +17,16 @@ class Occurrence extends Model {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
-                    notNull: { msg: "O nome não pode ser nulo!" },
-                    notEmpty: { msg: "O nome não pode ser vazio!" }
+                    notNull: { msg: "O descrição não pode ser nula!" },
+                    notEmpty: { msg: "O descrição não pode ser vazia!" }
                 }
             },
             dog_health_state: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 validate: {
-                    notNull: { msg: "O nome não pode ser nulo!" },
-                    notEmpty: { msg: "O nome não pode ser vazio!" }
+                    notNull: { msg: "O estado de saúde do cachorro não pode ser nulo!" },
+                    notEmpty: { msg: "O estado de saúde do cachorro não pode ser vazio!" }
                 }
             },
         }, { sequelize, modelName: "occurrence", tableName: "occurrences" });
