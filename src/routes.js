@@ -47,12 +47,15 @@ routes.post('/tutores', TutorController.create);
 routes.put('/tutores/:id', TutorController.update);
 routes.delete('/tutores/:id', TutorController.delete);
 routes.get('/tutores/report/findTutorsByCityWithAmountDogs', TutorController.findTutorsByCityWithAmountDogs);
+routes.get('/tutores/report/findByPkCityTutorsByCityWithAmountDogs/:cityId', TutorController.findByPkCityTutorsByCityWithAmountDogs);
 
 routes.get('/racas', BreedController.findAll);
 routes.get('/racas/:id', BreedController.findByPk);
 routes.post('/racas', BreedController.create);
 routes.put('/racas/:id', BreedController.update);
 routes.delete('/racas/:id', BreedController.delete);
+routes.get('/racas/report/findAllBreedWithVaccineRestriction', BreedController.findAllBreedWithVaccineRestriction);
+routes.get('/racas/report/findByPkBreedWithVaccineRestriction/:breedId', BreedController.findByPkBreedWithVaccineRestriction)
 
 routes.get('/vacinas', VaccineController.findAll);
 routes.get('/vacinas/:id', VaccineController.findByPk);
@@ -80,13 +83,9 @@ routes.delete('/portes/:id', DogSizeController.delete);
 
 routes.get('/caes', DogController.findAll);
 routes.get('/caes/:id', DogController.findByPk);
-routes.get('/caes/report/findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog', DogController.findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog);
-routes.get('/caes/report/findAllDogsByHealthState', DogController.findAllDogsByHealthState);
-
 routes.post('/caes', DogController.create);
 routes.put('/caes/:id', DogController.update);
 routes.delete('/caes/:id', DogController.delete);
-
 
 routes.get('/dogs', DogController.findAll);
 routes.get('/dogs/:id', DogController.findByPk);

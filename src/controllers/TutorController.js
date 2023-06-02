@@ -34,11 +34,17 @@ class TutorController {
             .catch(next);
     }
 
-  static async findTutorsByCityWithAmountDogs(req, res, next){
+    static async findTutorsByCityWithAmountDogs(req, res, next){
         TutorService.findTutorsByCityWithAmountDogs(req)
             .then(obj => res.json(obj))
             .catch(next);
-    }  
+    }
+
+    static async findByPkCityTutorsByCityWithAmountDogs(req, res, next){
+        TutorService.findByPkCityTutorsByCityWithAmountDogs(req)
+            .then(obj => res.json(obj))
+            .catch(next);
+    }
 
 }
 
