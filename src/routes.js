@@ -39,16 +39,16 @@ routes.get('/tutors/:id', TutorController.findByPk);
 routes.post('/tutors', TutorController.create);
 routes.put('/tutors/:id', TutorController.update);
 routes.delete('/tutors/:id', TutorController.delete);
-routes.get('/tutors/report/findTutorsByCityWithAmountDogs', TutorController.findTutorsByCityWithAmountDogs);
+routes.get('/tutors/report/findAllTutorsByCityWithAmountDogs', TutorController.findAllTutorsByCityWithAmountDogs);
 routes.get('/tutors/report/findByPkCityTutorsByCityWithAmountDogs/:cityId', TutorController.findByPkCityTutorsByCityWithAmountDogs);
 
-routes.get('/racas', BreedController.findAll);
-routes.get('/racas/:id', BreedController.findByPk);
-routes.post('/racas', BreedController.create);
-routes.put('/racas/:id', BreedController.update);
-routes.delete('/racas/:id', BreedController.delete);
-routes.get('/racas/report/findAllBreedWithVaccineRestriction', BreedController.findAllBreedWithVaccineRestriction);
-routes.get('/racas/report/findByPkBreedWithVaccineRestriction/:breedId', BreedController.findByPkBreedWithVaccineRestriction)
+routes.get('/breeds', BreedController.findAll);
+routes.get('/breeds/:id', BreedController.findByPk);
+routes.post('/breeds', BreedController.create);
+routes.put('/breeds/:id', BreedController.update);
+routes.delete('/breeds/:id', BreedController.delete);
+routes.get('/breeds/report/findAllBreedWithVaccineRestriction', BreedController.findAllBreedWithVaccineRestriction);
+routes.get('/breeds/report/findByPkBreedWithVaccineRestriction/:breedId', BreedController.findByPkBreedWithVaccineRestriction)
 
 routes.get('/vacinas', VaccineController.findAll);
 routes.get('/vacinas/:id', VaccineController.findByPk);

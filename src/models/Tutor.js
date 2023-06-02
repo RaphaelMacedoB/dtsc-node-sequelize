@@ -56,8 +56,6 @@ class Tutor extends Model {
                 validate: {
                     notNull: { msg: "O termo não pode ser nulo!" },
                     notEmpty: { msg: "O termo de telefone não pode ser vazio!" },
-
-
                 }
             },
             date_of_birth: {

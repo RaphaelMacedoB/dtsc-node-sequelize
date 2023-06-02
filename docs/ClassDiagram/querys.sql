@@ -28,7 +28,7 @@ ORDER BY t.name;
 
 -- 2° Relatório
 --	Breed with Vaccine  Restriction
-//Lucas
+
 SELECT b.id 							AS "ID",
 			 b.name 						AS "Breed Name",
 			 COUNT(vb.breed_id) AS "Amount Vaccine Restriction"
@@ -37,7 +37,7 @@ INNER JOIN vaccine_breed vb ON vb.breed_id = b.id
 INNER JOIN vaccines v 			ON vb.vaccine_id = v.id
 GROUP BY b.id, b.name
 ORDER BY b.id;
-//Lucas
+
 SELECT b.id								AS "ID",
 			 b.name							AS "Breed Name",
 			 COUNT(vb.breed_id) AS "Amount Vaccine Restriction"

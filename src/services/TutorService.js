@@ -71,6 +71,7 @@ class TutorService {
         const { cityId } = req.params;
         const objs = await sequelize.query(`
         SELECT t.id 			            AS "ID do Tutor",
+        c.id                                AS "ID da Cidade",
 		t.name 					            AS "Nome do Tutor",
 		g.date 					            AS "Data da adoção",
         c.name 					            AS "Nome da Cidade",

@@ -34,8 +34,8 @@ class TutorController {
             .catch(next);
     }
 
-    static async findTutorsByCityWithAmountDogs(req, res, next){
-        TutorService.findTutorsByCityWithAmountDogs(req)
+    static async findAllTutorsByCityWithAmountDogs(req, res, next){
+        TutorService.findAllTutorsByCityWithAmountDogs(req)
             .then(obj => res.json(obj))
             .catch(next);
     }
