@@ -14,18 +14,6 @@ INNER JOIN guardianships g 	ON g.tutor_id = t.id
 GROUP BY t.id, t.name, c.name
 ORDER BY t.name;
 
-SELECT t.id 						AS "ID do Tutor",
-			 t.name 					AS "Nome do Tutor",
-			 g.date 					AS "Data da adoção",
-			 c.name 					AS "Nome da Cidade",
-			 COUNT(g.dog_id) 	AS "Quantidade de Cachorros"
-FROM tutors t
-JOIN districts d 						ON t.district_id = d.id
-INNER JOIN cities c 				ON d.city_id = c.id
-INNER JOIN guardianships g 	ON g.tutor_id = t.id
-GROUP BY t.id, t.name, c.name
-ORDER BY t.name;
-
 
 SELECT t.id 						AS "ID do Tutor",
 			 t.name 					AS "Nome do Tutor",
@@ -145,10 +133,10 @@ ORDER BY oc.id;
 
 --	List of all registered occurrences of a dog of a given owner.
 
-SELECT oc.id								AS "ID",
+SELECT oc.id								AS "ID OCC",
 			 t.name								AS "Nome do tutor",
 			 d.name								AS "Nome do cachorro",
-			 oc.description				AS	"Description",
+			 oc.description				AS "Description",
 			 oc.date							AS "Date",
 			 oc.dog_health_state 	AS "Dog Health State"
 FROM occurrences oc
@@ -157,3 +145,20 @@ INNER JOIN guardianships g 	ON g.dog_id = d.id
 INNER JOIN tutors t 				ON g.tutor_id = t.id
 GROUP BY oc.id, oc.description, oc.date, oc.dog_health_state
 ORDER BY oc.id;
+
+SELECT oc.id								AS "ID OCC",
+			 t.name								AS "Nome do tutor",
+			 d.name								AS "Nome do cachorro",
+			 oc.description				AS "Description",
+			 oc.date							AS "Date",
+			 oc.dog_health_state 	AS "Dog Health State"
+FROM occurrences oc
+INNER JOIN dogs d 					ON oc.dog_id = d.id
+INNER JOIN guardianships g 	ON g.dog_id = d.id
+INNER JOIN tutors t 				ON g.tutor_id = t.id
+WHERE t.id = 2 AND d.id = 1	
+GROUP BY oc.id, oc.description, oc.date, oc.dog_health_state
+ORDER BY oc.id;
+
+SELECT * from guardianships
+SELECT * from tutors
