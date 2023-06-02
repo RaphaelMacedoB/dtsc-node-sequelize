@@ -34,6 +34,18 @@ class BreedController {
             .catch(next);
     }
 
+    static async findAllBreedWithVaccineRestriction(req, res, next){
+        BreedService.findAllBreedWithVaccineRestriction(req)
+            .then(obj => res.json(obj))
+            .catch(next);
+    }
+
+    static async findByPkBreedWithVaccineRestriction(req, res, next){
+        BreedService.findByPkBreedWithVaccineRestriction(req)
+            .then(obj => res.json(obj))
+            .catch(next);
+    }
+
 }
 
 export { BreedController };

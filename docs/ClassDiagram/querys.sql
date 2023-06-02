@@ -1,6 +1,17 @@
 -- 1° Relatório
-
 --	Tutors by City with amount of dogs
+
+SELECT t.id 						AS "ID do Tutor",
+			 t.name 					AS "Nome do Tutor",
+			 g.date 					AS "Data da adoção",
+			 c.name 					AS "Nome da Cidade",
+			 COUNT(g.dog_id) 	AS "Quantidade de Cachorros"
+FROM tutors t
+JOIN districts d 						ON t.district_id = d.id
+INNER JOIN cities c 				ON d.city_id = c.id
+INNER JOIN guardianships g 	ON g.tutor_id = t.id
+GROUP BY t.id, t.name, c.name
+ORDER BY t.name;
 
 SELECT t.id 						AS "ID do Tutor",
 			 t.name 					AS "Nome do Tutor",
@@ -29,7 +40,6 @@ GROUP BY t.id, t.name, c.name
 ORDER BY t.name;
 
 -- 2° Relatório
-
 --	Breed with Vaccine  Restriction
 
 SELECT b.id 							AS "ID",
@@ -52,7 +62,6 @@ GROUP BY b.id, b.name
 ORDER BY b.id;
 
 -- 3° Relatório
-
 --	Dogs by Aggresion Score and Amount of Occurrences by Dog
 
 SELECT d.id					AS "ID",
@@ -81,7 +90,6 @@ ORDER BY d.id;
 
 
 -- 4° Relatório
-
 --	List of all dogs by health state every dog with level of aggression.
 
 SELECT d.id									AS "ID",
@@ -107,7 +115,6 @@ GROUP BY d.id, d.name, toc.severity
 ORDER BY d.id;
 
 -- 5° Relatório
-
 --	List of all occurrences performed on that day by that veterinarian
 
 SELECT oc.id								AS "ID",
@@ -130,7 +137,6 @@ GROUP BY oc.id, oc.description, oc.date, oc.dog_health_state
 ORDER BY oc.id;
 
 -- 6° Relatório 
-
 --	List of all registered occurrences of a dog of a given owner.
 
 SELECT oc.id								AS "ID OCC",

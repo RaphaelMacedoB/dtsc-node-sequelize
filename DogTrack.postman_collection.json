@@ -1,6 +1,5 @@
 {
 	"info": {
-		"_postman_id": "04d130dd-0a0b-4813-97ae-c7a2e720f3ba",
 		"name": "DogTrack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -54,7 +53,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Riri\",\r\n    \"weight\": 2.3,\r\n    \"date_of_birth\": \"2023/03/16\",\r\n    \"breeds\": [\r\n        {\r\n            \"id\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"name\": \"Riri2\",\r\n    \"weight\": 2.3,\r\n    \"date_of_birth\": \"2023/03/16\",\r\n    \"breed\": \r\n        {\r\n            \"id\": \"6\"\r\n        }\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Riri\",\r\n    \"weight\": 1.1,\r\n    \"date_of_birth\": \"2023/03/11\",\r\n    \"breeds\": [\r\n        {\r\n            \"id\": \"2\"\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"name\": \"Riri2\",\r\n    \"weight\": 2.3,\r\n    \"date_of_birth\": \"2023/03/16\",\r\n    \"breed\": \r\n        {\r\n            \"id\": \"6\"\r\n        }\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,7 +89,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/dogs/1",
+							"raw": "http://localhost:3333/dogs/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -98,7 +97,7 @@
 							"port": "3333",
 							"path": [
 								"dogs",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -119,6 +118,48 @@
 							"path": [
 								"dogs",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs/report/findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"report",
+								"findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllDogsByHealthState",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs/report/findAllDogsByHealthState",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"report",
+								"findAllDogsByHealthState"
 							]
 						}
 					},
@@ -587,7 +628,7 @@
 			]
 		},
 		{
-			"name": "Tutela",
+			"name": "Guardianship",
 			"item": [
 				{
 					"name": "findAll",
@@ -595,20 +636,74 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas",
-							"protocol": "https",
+							"raw": "http://localhost:3333/guardianships/",
+							"protocol": "http",
 							"host": [
-								"dtsc-node-sequelize",
-								"raphaelbernard1",
-								"repl",
-								"co"
+								"localhost"
 							],
+							"port": "3333",
 							"path": [
-								"tutelas"
+								"guardianships",
+								""
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "findAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/guardianships/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7336"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ca8-HxX3BrFYqKbXZVOBms3OhRURwnA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:08:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"date\": \"2021-03-24\",\n        \"createdAt\": \"2023-06-02T21:06:44.158Z\",\n        \"updatedAt\": \"2023-06-02T21:06:44.158Z\",\n        \"dogId\": 1,\n        \"employeeId\": 3,\n        \"tutorId\": 2,\n        \"dog\": {\n            \"id\": 1,\n            \"name\": \"Ópera\",\n            \"weight\": 14,\n            \"date_of_birth\": \"2020-05-14\",\n            \"createdAt\": \"2023-06-02T21:06:42.600Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.600Z\",\n            \"breedId\": 5,\n            \"breed\": {\n                \"id\": 5,\n                \"name\": \"Fox Paulistinha\",\n                \"createdAt\": \"2023-06-02T21:06:41.607Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.607Z\",\n                \"dogSizeId\": 2,\n                \"dogSize\": {\n                    \"id\": 2,\n                    \"name\": \"pequeno\",\n                    \"occupied_size\": 15,\n                    \"createdAt\": \"2023-06-02T21:06:41.067Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:41.067Z\"\n                }\n            }\n        },\n        \"employee\": {\n            \"id\": 3,\n            \"name\": \"Lucas Macedo Bernardino\",\n            \"email\": \"lucasmacedoes@gmail.com\",\n            \"login\": \"lukasombrado\",\n            \"password\": \"Ab123!@#\",\n            \"createdAt\": \"2023-06-02T21:06:42.966Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.966Z\"\n        },\n        \"tutor\": {\n            \"id\": 2,\n            \"name\": \"Raphael Macedo Bernardino\",\n            \"house_number\": 108,\n            \"zip_code\": \"29.307-195\",\n            \"email\": \"faeldojo@gmail.com\",\n            \"phone\": \"(28)99916-2116\",\n            \"public_place\": \"Aceito\",\n            \"date_of_birth\": \"2000-03-28\",\n            \"space_size\": 500,\n            \"createdAt\": \"2023-06-02T21:06:40.792Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.792Z\",\n            \"districtId\": 2,\n            \"district\": {\n                \"id\": 2,\n                \"name\": \"Guararema\",\n                \"createdAt\": \"2023-06-02T21:06:40.509Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.509Z\",\n                \"cityId\": 1,\n                \"city\": {\n                    \"id\": 1,\n                    \"name\": \"Cachoeiro\",\n                    \"createdAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"ufId\": 1,\n                    \"uf\": {\n                        \"id\": 1,\n                        \"sigla\": \"ES\",\n                        \"name\": \"Espírito Santo\",\n                        \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                        \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"id\": 2,\n        \"date\": \"2012-04-21\",\n        \"createdAt\": \"2023-06-02T21:06:44.234Z\",\n        \"updatedAt\": \"2023-06-02T21:06:44.234Z\",\n        \"dogId\": 1,\n        \"employeeId\": 2,\n        \"tutorId\": 3,\n        \"dog\": {\n            \"id\": 1,\n            \"name\": \"Ópera\",\n            \"weight\": 14,\n            \"date_of_birth\": \"2020-05-14\",\n            \"createdAt\": \"2023-06-02T21:06:42.600Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.600Z\",\n            \"breedId\": 5,\n            \"breed\": {\n                \"id\": 5,\n                \"name\": \"Fox Paulistinha\",\n                \"createdAt\": \"2023-06-02T21:06:41.607Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.607Z\",\n                \"dogSizeId\": 2,\n                \"dogSize\": {\n                    \"id\": 2,\n                    \"name\": \"pequeno\",\n                    \"occupied_size\": 15,\n                    \"createdAt\": \"2023-06-02T21:06:41.067Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:41.067Z\"\n                }\n            }\n        },\n        \"employee\": {\n            \"id\": 2,\n            \"name\": \"Jefferson Abreu\",\n            \"email\": \"download10@gmail.com\",\n            \"login\": \"JAbt\",\n            \"password\": \"asfgarh#\",\n            \"createdAt\": \"2023-06-02T21:06:42.908Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.908Z\"\n        },\n        \"tutor\": {\n            \"id\": 3,\n            \"name\": \"Jefferson Abreu\",\n            \"house_number\": 49,\n            \"zip_code\": \"29.307-125\",\n            \"email\": \"download10@gmail.com\",\n            \"phone\": \"(28)99914-4651\",\n            \"public_place\": \"Aceito\",\n            \"date_of_birth\": \"1980-02-14\",\n            \"space_size\": 650,\n            \"createdAt\": \"2023-06-02T21:06:40.867Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.867Z\",\n            \"districtId\": 1,\n            \"district\": {\n                \"id\": 1,\n                \"name\": \"Vila do Sul\",\n                \"createdAt\": \"2023-06-02T21:06:40.449Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.449Z\",\n                \"cityId\": 1,\n                \"city\": {\n                    \"id\": 1,\n                    \"name\": \"Cachoeiro\",\n                    \"createdAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"ufId\": 1,\n                    \"uf\": {\n                        \"id\": 1,\n                        \"sigla\": \"ES\",\n                        \"name\": \"Espírito Santo\",\n                        \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                        \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"id\": 3,\n        \"date\": \"2000-12-04\",\n        \"createdAt\": \"2023-06-02T21:06:44.316Z\",\n        \"updatedAt\": \"2023-06-02T21:06:44.316Z\",\n        \"dogId\": 3,\n        \"employeeId\": 2,\n        \"tutorId\": 1,\n        \"dog\": {\n            \"id\": 3,\n            \"name\": \"Xena\",\n            \"weight\": 15,\n            \"date_of_birth\": \"2020-06-14\",\n            \"createdAt\": \"2023-06-02T21:06:42.716Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.716Z\",\n            \"breedId\": 3,\n            \"breed\": {\n                \"id\": 3,\n                \"name\": \"Husky siberiano\",\n                \"createdAt\": \"2023-06-02T21:06:41.474Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.474Z\",\n                \"dogSizeId\": 3,\n                \"dogSize\": {\n                    \"id\": 3,\n                    \"name\": \"medio\",\n                    \"occupied_size\": 30,\n                    \"createdAt\": \"2023-06-02T21:06:41.133Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:41.133Z\"\n                }\n            }\n        },\n        \"employee\": {\n            \"id\": 2,\n            \"name\": \"Jefferson Abreu\",\n            \"email\": \"download10@gmail.com\",\n            \"login\": \"JAbt\",\n            \"password\": \"asfgarh#\",\n            \"createdAt\": \"2023-06-02T21:06:42.908Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.908Z\"\n        },\n        \"tutor\": {\n            \"id\": 1,\n            \"name\": \"Lucas Macedo Bernardino\",\n            \"house_number\": 108,\n            \"zip_code\": \"29.307-195\",\n            \"email\": \"lucasmacedoes@gmail.com\",\n            \"phone\": \"(28)99930-4053\",\n            \"public_place\": \"Aceito\",\n            \"date_of_birth\": \"2000-03-28\",\n            \"space_size\": 500,\n            \"createdAt\": \"2023-06-02T21:06:40.714Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.714Z\",\n            \"districtId\": 2,\n            \"district\": {\n                \"id\": 2,\n                \"name\": \"Guararema\",\n                \"createdAt\": \"2023-06-02T21:06:40.509Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.509Z\",\n                \"cityId\": 1,\n                \"city\": {\n                    \"id\": 1,\n                    \"name\": \"Cachoeiro\",\n                    \"createdAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"ufId\": 1,\n                    \"uf\": {\n                        \"id\": 1,\n                        \"sigla\": \"ES\",\n                        \"name\": \"Espírito Santo\",\n                        \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                        \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"id\": 4,\n        \"date\": \"2022-12-13\",\n        \"createdAt\": \"2023-06-02T21:06:44.409Z\",\n        \"updatedAt\": \"2023-06-02T21:06:44.409Z\",\n        \"dogId\": 2,\n        \"employeeId\": 3,\n        \"tutorId\": 4,\n        \"dog\": {\n            \"id\": 2,\n            \"name\": \"Jazz\",\n            \"weight\": 11,\n            \"date_of_birth\": \"2020-11-14\",\n            \"createdAt\": \"2023-06-02T21:06:42.656Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.656Z\",\n            \"breedId\": 2,\n            \"breed\": {\n                \"id\": 2,\n                \"name\": \"Golden retriever\",\n                \"createdAt\": \"2023-06-02T21:06:41.415Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.415Z\",\n                \"dogSizeId\": 5,\n                \"dogSize\": {\n                    \"id\": 5,\n                    \"name\": \"gigante\",\n                    \"occupied_size\": 100,\n                    \"createdAt\": \"2023-06-02T21:06:41.274Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:41.274Z\"\n                }\n            }\n        },\n        \"employee\": {\n            \"id\": 3,\n            \"name\": \"Lucas Macedo Bernardino\",\n            \"email\": \"lucasmacedoes@gmail.com\",\n            \"login\": \"lukasombrado\",\n            \"password\": \"Ab123!@#\",\n            \"createdAt\": \"2023-06-02T21:06:42.966Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.966Z\"\n        },\n        \"tutor\": {\n            \"id\": 4,\n            \"name\": \"Jonatas Silva Bernardino\",\n            \"house_number\": 108,\n            \"zip_code\": \"29.307-195\",\n            \"email\": \"jobernardino0@gmail.com\",\n            \"phone\": \"(28)99919-0497\",\n            \"public_place\": \"Aceito\",\n            \"date_of_birth\": \"1979-04-14\",\n            \"space_size\": 650,\n            \"createdAt\": \"2023-06-02T21:06:40.933Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.933Z\",\n            \"districtId\": 3,\n            \"district\": {\n                \"id\": 3,\n                \"name\": \"Maria Ortiz\",\n                \"createdAt\": \"2023-06-02T21:06:40.574Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.574Z\",\n                \"cityId\": 2,\n                \"city\": {\n                    \"id\": 2,\n                    \"name\": \"Alegre\",\n                    \"createdAt\": \"2023-06-02T21:06:40.266Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.266Z\",\n                    \"ufId\": 1,\n                    \"uf\": {\n                        \"id\": 1,\n                        \"sigla\": \"ES\",\n                        \"name\": \"Espírito Santo\",\n                        \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                        \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                    }\n                }\n            }\n        }\n    },\n    {\n        \"id\": 5,\n        \"date\": \"2022-12-13\",\n        \"createdAt\": \"2023-06-02T21:06:44.500Z\",\n        \"updatedAt\": \"2023-06-02T21:06:44.500Z\",\n        \"dogId\": 2,\n        \"employeeId\": 3,\n        \"tutorId\": 1,\n        \"dog\": {\n            \"id\": 2,\n            \"name\": \"Jazz\",\n            \"weight\": 11,\n            \"date_of_birth\": \"2020-11-14\",\n            \"createdAt\": \"2023-06-02T21:06:42.656Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.656Z\",\n            \"breedId\": 2,\n            \"breed\": {\n                \"id\": 2,\n                \"name\": \"Golden retriever\",\n                \"createdAt\": \"2023-06-02T21:06:41.415Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.415Z\",\n                \"dogSizeId\": 5,\n                \"dogSize\": {\n                    \"id\": 5,\n                    \"name\": \"gigante\",\n                    \"occupied_size\": 100,\n                    \"createdAt\": \"2023-06-02T21:06:41.274Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:41.274Z\"\n                }\n            }\n        },\n        \"employee\": {\n            \"id\": 3,\n            \"name\": \"Lucas Macedo Bernardino\",\n            \"email\": \"lucasmacedoes@gmail.com\",\n            \"login\": \"lukasombrado\",\n            \"password\": \"Ab123!@#\",\n            \"createdAt\": \"2023-06-02T21:06:42.966Z\",\n            \"updatedAt\": \"2023-06-02T21:06:42.966Z\"\n        },\n        \"tutor\": {\n            \"id\": 1,\n            \"name\": \"Lucas Macedo Bernardino\",\n            \"house_number\": 108,\n            \"zip_code\": \"29.307-195\",\n            \"email\": \"lucasmacedoes@gmail.com\",\n            \"phone\": \"(28)99930-4053\",\n            \"public_place\": \"Aceito\",\n            \"date_of_birth\": \"2000-03-28\",\n            \"space_size\": 500,\n            \"createdAt\": \"2023-06-02T21:06:40.714Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.714Z\",\n            \"districtId\": 2,\n            \"district\": {\n                \"id\": 2,\n                \"name\": \"Guararema\",\n                \"createdAt\": \"2023-06-02T21:06:40.509Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.509Z\",\n                \"cityId\": 1,\n                \"city\": {\n                    \"id\": 1,\n                    \"name\": \"Cachoeiro\",\n                    \"createdAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.208Z\",\n                    \"ufId\": 1,\n                    \"uf\": {\n                        \"id\": 1,\n                        \"sigla\": \"ES\",\n                        \"name\": \"Espírito Santo\",\n                        \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                        \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                    }\n                }\n            }\n        }\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "findByPk",
@@ -616,21 +711,74 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas/1",
-							"protocol": "https",
+							"raw": "http://localhost:3333/guardianships/1",
+							"protocol": "http",
 							"host": [
-								"dtsc-node-sequelize",
-								"raphaelbernard1",
-								"repl",
-								"co"
+								"localhost"
 							],
+							"port": "3333",
 							"path": [
-								"tutelas",
+								"guardianships",
 								"1"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "findByPk",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/guardianships/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1474"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c2-UGUTqyEA9qQW/cUlxjE1fsS8t6s\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:09:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"date\": \"2021-03-24\",\n    \"createdAt\": \"2023-06-02T21:06:44.158Z\",\n    \"updatedAt\": \"2023-06-02T21:06:44.158Z\",\n    \"dogId\": 1,\n    \"employeeId\": 3,\n    \"tutorId\": 2,\n    \"dog\": {\n        \"id\": 1,\n        \"name\": \"Ópera\",\n        \"weight\": 14,\n        \"date_of_birth\": \"2020-05-14\",\n        \"createdAt\": \"2023-06-02T21:06:42.600Z\",\n        \"updatedAt\": \"2023-06-02T21:06:42.600Z\",\n        \"breedId\": 5,\n        \"breed\": {\n            \"id\": 5,\n            \"name\": \"Fox Paulistinha\",\n            \"createdAt\": \"2023-06-02T21:06:41.607Z\",\n            \"updatedAt\": \"2023-06-02T21:06:41.607Z\",\n            \"dogSizeId\": 2,\n            \"dogSize\": {\n                \"id\": 2,\n                \"name\": \"pequeno\",\n                \"occupied_size\": 15,\n                \"createdAt\": \"2023-06-02T21:06:41.067Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.067Z\"\n            }\n        }\n    },\n    \"employee\": {\n        \"id\": 3,\n        \"name\": \"Lucas Macedo Bernardino\",\n        \"email\": \"lucasmacedoes@gmail.com\",\n        \"login\": \"lukasombrado\",\n        \"password\": \"Ab123!@#\",\n        \"createdAt\": \"2023-06-02T21:06:42.966Z\",\n        \"updatedAt\": \"2023-06-02T21:06:42.966Z\"\n    },\n    \"tutor\": {\n        \"id\": 2,\n        \"name\": \"Raphael Macedo Bernardino\",\n        \"house_number\": 108,\n        \"zip_code\": \"29.307-195\",\n        \"email\": \"faeldojo@gmail.com\",\n        \"phone\": \"(28)99916-2116\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"2000-03-28\",\n        \"space_size\": 500,\n        \"createdAt\": \"2023-06-02T21:06:40.792Z\",\n        \"updatedAt\": \"2023-06-02T21:06:40.792Z\",\n        \"districtId\": 2,\n        \"district\": {\n            \"id\": 2,\n            \"name\": \"Guararema\",\n            \"createdAt\": \"2023-06-02T21:06:40.509Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.509Z\",\n            \"cityId\": 1,\n            \"city\": {\n                \"id\": 1,\n                \"name\": \"Cachoeiro\",\n                \"createdAt\": \"2023-06-02T21:06:40.208Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.208Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                }\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "create",
@@ -639,7 +787,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2020/04/21\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
+							"raw": "{\r\n    \"date\": \"2000/04/21\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -647,31 +795,435 @@
 							}
 						},
 						"url": {
-							"raw": "https://dtsc-node-sequelize.raphaelbernard1.repl.co/tutelas",
-							"protocol": "https",
+							"raw": "http://localhost:3333/guardianships/",
+							"protocol": "http",
 							"host": [
-								"dtsc-node-sequelize",
-								"raphaelbernard1",
-								"repl",
-								"co"
+								"localhost"
 							],
+							"port": "3333",
 							"path": [
-								"tutelas"
+								"guardianships",
+								""
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2000/04/21\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/guardianships/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8f-4i6ebAcfGpjbAhr8EBxfWb93VgE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:09:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"date\": \"2000-04-21\",\n    \"dogId\": 1,\n    \"employeeId\": 1,\n    \"tutorId\": 1,\n    \"updatedAt\": \"2023-06-02T21:09:32.154Z\",\n    \"createdAt\": \"2023-06-02T21:09:32.154Z\"\n}"
+						}
+					]
 				},
 				{
-					"name": "New Request",
+					"name": "update",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2000/04/01\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:3333/guardianships/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"guardianships",
+								"6"
+							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2000/04/01\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 1}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/guardianships/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1477"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5c5-ubJYEdtEYfAW4McLzwUPFYiNMxw\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:10:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"date\": \"2000-04-01\",\n    \"createdAt\": \"2023-06-02T21:09:32.154Z\",\n    \"updatedAt\": \"2023-06-02T21:10:23.936Z\",\n    \"dogId\": 1,\n    \"employeeId\": 1,\n    \"tutorId\": 1,\n    \"dog\": {\n        \"id\": 1,\n        \"name\": \"Ópera\",\n        \"weight\": 14,\n        \"date_of_birth\": \"2020-05-14\",\n        \"createdAt\": \"2023-06-02T21:06:42.600Z\",\n        \"updatedAt\": \"2023-06-02T21:06:42.600Z\",\n        \"breedId\": 5,\n        \"breed\": {\n            \"id\": 5,\n            \"name\": \"Fox Paulistinha\",\n            \"createdAt\": \"2023-06-02T21:06:41.607Z\",\n            \"updatedAt\": \"2023-06-02T21:06:41.607Z\",\n            \"dogSizeId\": 2,\n            \"dogSize\": {\n                \"id\": 2,\n                \"name\": \"pequeno\",\n                \"occupied_size\": 15,\n                \"createdAt\": \"2023-06-02T21:06:41.067Z\",\n                \"updatedAt\": \"2023-06-02T21:06:41.067Z\"\n            }\n        }\n    },\n    \"employee\": {\n        \"id\": 1,\n        \"name\": \"Lucas Macedo Bernardino\",\n        \"email\": \"lucasmacedoes@gmail.com\",\n        \"login\": \"lukasombrado\",\n        \"password\": \"Ab123!@#\",\n        \"createdAt\": \"2023-06-02T21:06:42.850Z\",\n        \"updatedAt\": \"2023-06-02T21:06:42.850Z\"\n    },\n    \"tutor\": {\n        \"id\": 1,\n        \"name\": \"Lucas Macedo Bernardino\",\n        \"house_number\": 108,\n        \"zip_code\": \"29.307-195\",\n        \"email\": \"lucasmacedoes@gmail.com\",\n        \"phone\": \"(28)99930-4053\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"2000-03-28\",\n        \"space_size\": 500,\n        \"createdAt\": \"2023-06-02T21:06:40.714Z\",\n        \"updatedAt\": \"2023-06-02T21:06:40.714Z\",\n        \"districtId\": 2,\n        \"district\": {\n            \"id\": 2,\n            \"name\": \"Guararema\",\n            \"createdAt\": \"2023-06-02T21:06:40.509Z\",\n            \"updatedAt\": \"2023-06-02T21:06:40.509Z\",\n            \"cityId\": 1,\n            \"city\": {\n                \"id\": 1,\n                \"name\": \"Cachoeiro\",\n                \"createdAt\": \"2023-06-02T21:06:40.208Z\",\n                \"updatedAt\": \"2023-06-02T21:06:40.208Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T21:06:40.071Z\",\n                    \"updatedAt\": \"2023-06-02T21:06:40.071Z\"\n                }\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/guardianships/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"guardianships",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/guardianships/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8f-SseKDr1qgow8VZe4UMoUd1zmxwE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:10:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"date\": \"2022-12-13\",\n    \"createdAt\": \"2023-06-02T21:06:44.500Z\",\n    \"updatedAt\": \"2023-06-02T21:06:44.500Z\",\n    \"dogId\": 2,\n    \"employeeId\": 3,\n    \"tutorId\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "regra2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2000/04/21\",\r\n    \"dog\": {\"id\": 5},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 3}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/guardianships/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"guardianships",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "regra2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2000/04/21\",\r\n    \"dog\": {\"id\": 1},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 3}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/guardianships/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-2353J6+xbncmTltYO5TU6QoFIFg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:16:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"O Tutor pode ter no máximo três adoções !\"\n}"
+						}
+					]
+				},
+				{
+					"name": "regra1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2000/04/21\",\r\n    \"dog\": {\"id\": 5},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 3}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/guardianships",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"guardianships"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "regra1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"date\": \"2000/04/21\",\r\n    \"dog\": {\"id\": 5},\r\n    \"employee\": {\"id\": 1},\r\n    \"tutor\": {\"id\": 3}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/guardianships",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"guardianships"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-JAK+T8YU6JKI4U0v7K89/MomRu4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:24:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"O Tutor não possui espaço suficiente para adotar o cachorro!\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -814,14 +1366,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/cidades/",
+							"raw": "http://localhost:3333/cities/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"cidades",
+								"cities",
 								""
 							]
 						}
@@ -834,14 +1386,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/cidades/1",
+							"raw": "http://localhost:3333/cities/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"cidades",
+								"cities",
 								"1"
 							]
 						}
@@ -863,14 +1415,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/cidades",
+							"raw": "http://localhost:3333/cities",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"cidades"
+								"cities"
 							]
 						}
 					},
@@ -891,14 +1443,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/cidades/5",
+							"raw": "http://localhost:3333/cities/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"cidades",
+								"cities",
 								"5"
 							]
 						}
@@ -920,14 +1472,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/cidades/5",
+							"raw": "http://localhost:3333/cities/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"cidades",
+								"cities",
 								"5"
 							]
 						}
@@ -945,14 +1497,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/bairros/",
+							"raw": "http://localhost:3333/district/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"bairros",
+								"district",
 								""
 							]
 						}
@@ -965,14 +1517,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/bairros/1",
+							"raw": "http://localhost:3333/district/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"bairros",
+								"district",
 								"1"
 							]
 						}
@@ -994,14 +1546,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/bairros",
+							"raw": "http://localhost:3333/district",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"bairros"
+								"district"
 							]
 						}
 					},
@@ -1014,7 +1566,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"city\": {\r\n        \"id\":2\r\n    },\r\n    \"name\":\"Bairro teste update\"\r\n}",
+							"raw": "{\r\n    \"uf\": {\r\n        \"id\":1\r\n    },\r\n    \"name\":\"Bairro teste update\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1022,14 +1574,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/bairros/5",
+							"raw": "http://localhost:3333/district/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"bairros",
+								"district",
 								"5"
 							]
 						}
@@ -1051,14 +1603,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/bairros/5",
+							"raw": "http://localhost:3333/district/5",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"bairros",
+								"district",
 								"5"
 							]
 						}
@@ -1117,7 +1669,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"grandalhão\",\r\n    \"occupied_size\": 50\r\n}",
+							"raw": "{\r\n    \"name\": \"grandalhão\",\r\n    \"occupied_size\": 600\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1207,19 +1759,74 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/racas/",
+							"raw": "http://localhost:3333/breeds/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"racas",
+								"breeds",
 								""
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "findAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/breeds/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1287"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"507-l5jtvSP6MwDEGmgaeOH2N3hcjLM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 20:55:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Dogue alemão\",\n        \"createdAt\": \"2023-06-02T20:55:05.803Z\",\n        \"updatedAt\": \"2023-06-02T20:55:05.803Z\",\n        \"dogSizeId\": 3,\n        \"dogSize\": {\n            \"id\": 3,\n            \"name\": \"medio\",\n            \"occupied_size\": 30,\n            \"createdAt\": \"2023-06-02T20:55:05.594Z\",\n            \"updatedAt\": \"2023-06-02T20:55:05.594Z\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Golden retriever\",\n        \"createdAt\": \"2023-06-02T20:55:05.869Z\",\n        \"updatedAt\": \"2023-06-02T20:55:05.869Z\",\n        \"dogSizeId\": 5,\n        \"dogSize\": {\n            \"id\": 5,\n            \"name\": \"gigante\",\n            \"occupied_size\": 100,\n            \"createdAt\": \"2023-06-02T20:55:05.735Z\",\n            \"updatedAt\": \"2023-06-02T20:55:05.735Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Husky siberiano\",\n        \"createdAt\": \"2023-06-02T20:55:05.935Z\",\n        \"updatedAt\": \"2023-06-02T20:55:05.935Z\",\n        \"dogSizeId\": 3,\n        \"dogSize\": {\n            \"id\": 3,\n            \"name\": \"medio\",\n            \"occupied_size\": 30,\n            \"createdAt\": \"2023-06-02T20:55:05.594Z\",\n            \"updatedAt\": \"2023-06-02T20:55:05.594Z\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Bull Terrier\",\n        \"createdAt\": \"2023-06-02T20:55:06.003Z\",\n        \"updatedAt\": \"2023-06-02T20:55:06.003Z\",\n        \"dogSizeId\": 3,\n        \"dogSize\": {\n            \"id\": 3,\n            \"name\": \"medio\",\n            \"occupied_size\": 30,\n            \"createdAt\": \"2023-06-02T20:55:05.594Z\",\n            \"updatedAt\": \"2023-06-02T20:55:05.594Z\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Fox Paulistinha\",\n        \"createdAt\": \"2023-06-02T20:55:06.069Z\",\n        \"updatedAt\": \"2023-06-02T20:55:06.069Z\",\n        \"dogSizeId\": 2,\n        \"dogSize\": {\n            \"id\": 2,\n            \"name\": \"pequeno\",\n            \"occupied_size\": 15,\n            \"createdAt\": \"2023-06-02T20:55:05.527Z\",\n            \"updatedAt\": \"2023-06-02T20:55:05.527Z\"\n        }\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "findByPk",
@@ -1227,19 +1834,74 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/racas/1",
+							"raw": "http://localhost:3333/breeds/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"racas",
+								"breeds",
 								"1"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "findByPk",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/breeds/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "254"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fe-ZqDIA2IeVTjXLBGdJDV5CSbepZQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 20:56:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Dogue alemão\",\n    \"createdAt\": \"2023-06-02T20:55:05.803Z\",\n    \"updatedAt\": \"2023-06-02T20:55:05.803Z\",\n    \"dogSizeId\": 3,\n    \"dogSize\": {\n        \"id\": 3,\n        \"name\": \"medio\",\n        \"occupied_size\": 30,\n        \"createdAt\": \"2023-06-02T20:55:05.594Z\",\n        \"updatedAt\": \"2023-06-02T20:55:05.594Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "create",
@@ -1248,7 +1910,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Teste AuAu\",\r\n    \"dogSize\": {\r\n        \"id\": 3\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"Raça enorme\",\r\n    \"dogSize\": {\r\n        \"id\": 6\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1256,18 +1918,83 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/racas",
+							"raw": "http://localhost:3333/breeds/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"racas"
+								"breeds",
+								""
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Raça somente para teste\",\r\n    \"dogSize\": {\r\n        \"id\": 3\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/breeds/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "265"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"109-qZTQ3liaGoQfrf3h4nr1TQAt8t0\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 20:57:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"name\": \"Raça somente para teste\",\n    \"createdAt\": \"2023-06-02T20:57:16.981Z\",\n    \"updatedAt\": \"2023-06-02T20:57:16.981Z\",\n    \"dogSizeId\": 3,\n    \"dogSize\": {\n        \"id\": 3,\n        \"name\": \"medio\",\n        \"occupied_size\": 30,\n        \"createdAt\": \"2023-06-02T20:55:05.594Z\",\n        \"updatedAt\": \"2023-06-02T20:55:05.594Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "update",
@@ -1276,7 +2003,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Teste AuAu update\",\r\n    \"dogSize\": {\r\n        \"id\": 2\r\n    }\r\n}",
+							"raw": "{\r\n    \"name\": \"Raça\",\r\n    \"createdAt\": \"2023-06-02T20:57:16.981Z\",\r\n    \"updatedAt\": \"2023-06-02T20:57:16.981Z\",\r\n    \"dogSize\": {\"id\": 2}\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1284,19 +2011,83 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/racas/6",
+							"raw": "http://localhost:3333/breeds/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"racas",
+								"breeds",
 								"6"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Raça\",\r\n    \"createdAt\": \"2023-06-02T20:57:16.981Z\",\r\n    \"updatedAt\": \"2023-06-02T20:57:16.981Z\",\r\n    \"dogSize\": {\"id\": 2}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/breeds/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-dL+nNw8sMo1KeHXF5ST6WpZ2+KA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 20:58:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"name\": \"Raça\",\n    \"createdAt\": \"2023-06-02T20:57:16.981Z\",\n    \"updatedAt\": \"2023-06-02T20:58:23.166Z\",\n    \"dogSizeId\": 2,\n    \"dogSize\": {\n        \"id\": 2,\n        \"name\": \"pequeno\",\n        \"occupied_size\": 15,\n        \"createdAt\": \"2023-06-02T20:55:05.527Z\",\n        \"updatedAt\": \"2023-06-02T20:55:05.527Z\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "delete",
@@ -1313,19 +2104,239 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/racas/6",
+							"raw": "http://localhost:3333/breeds/6",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"racas",
+								"breeds",
 								"6"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3333/breeds/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"73-LWZ44hFj2zRVJPSF2gIKG9N9e3Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 20:58:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"name\": \"Raça\",\n    \"createdAt\": \"2023-06-02T20:57:16.981Z\",\n    \"updatedAt\": \"2023-06-02T20:58:23.166Z\",\n    \"dogSizeId\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "findAllBreedWithVaccineRestriction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/breeds/report/findAllBreedWithVaccineRestriction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"breeds",
+								"report",
+								"findAllBreedWithVaccineRestriction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "findAllBreedWithVaccineRestriction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/breeds/report/findAllBreedWithVaccineRestriction",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										"report",
+										"findAllBreedWithVaccineRestriction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "382"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17e-VxPFcYPM3m90JYHgUiiyVA0uZjM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 20:59:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Breed ID\": 1,\n        \"Breed Name\": \"Dogue alemão\",\n        \"Amount Vaccine Restriction\": 1\n    },\n    {\n        \"Breed ID\": 2,\n        \"Breed Name\": \"Golden retriever\",\n        \"Amount Vaccine Restriction\": 1\n    },\n    {\n        \"Breed ID\": 3,\n        \"Breed Name\": \"Husky siberiano\",\n        \"Amount Vaccine Restriction\": 1\n    },\n    {\n        \"Breed ID\": 4,\n        \"Breed Name\": \"Bull Terrier\",\n        \"Amount Vaccine Restriction\": 1\n    },\n    {\n        \"Breed ID\": 5,\n        \"Breed Name\": \"Fox Paulistinha\",\n        \"Amount Vaccine Restriction\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "findByPkBreedWithVaccineRestriction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/breeds/report/findByPkBreedWithVaccineRestriction/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"breeds",
+								"report",
+								"findByPkBreedWithVaccineRestriction",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "findByPkBreedWithVaccineRestriction",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3333/breeds/report/findByPkBreedWithVaccineRestriction/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3333",
+									"path": [
+										"breeds",
+										"report",
+										"findByPkBreedWithVaccineRestriction",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-YAW2uJk1S/Wa7OSg7twF51OJbwA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Jun 2023 21:00:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"ID\": 1,\n        \"Breed Name\": \"Dogue alemão\",\n        \"Amount Vaccine Restriction\": 1\n    }\n]"
+						}
+					]
 				}
 			]
 		},
@@ -1453,6 +2464,106 @@
 							"path": [
 								"portes",
 								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vaccination",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createRegra1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023/05/29\",\r\n    \"vaccine\": {\r\n        \"id\":1\r\n    },\r\n    \"dog\": {\r\n        \"id\":1\r\n    },\r\n    \"employee\": {\r\n        \"id\":1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/vaccinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vaccinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRegra2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023/05/29\",\r\n    \"vaccine\": {\r\n        \"id\":1\r\n    },\r\n    \"dog\": {\r\n        \"id\":1\r\n    },\r\n    \"employee\": {\r\n        \"id\":1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/vaccinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vaccinations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createOK",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2023/05/29\",\r\n    \"vaccine\": {\r\n        \"id\":1\r\n    },\r\n    \"dog\": {\r\n        \"id\":1\r\n    },\r\n    \"employee\": {\r\n        \"id\":1\r\n    },\r\n    \"veterinarian\": {\r\n        \"id\":1\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/vaccinations/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"vaccinations",
+								""
 							]
 						}
 					},

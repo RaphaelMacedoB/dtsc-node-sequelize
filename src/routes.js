@@ -16,42 +16,39 @@ import { OccurrenceController } from "./controllers/OccurrenceController.js"
 
 const routes = express.Router();
 
-routes.get('/ocorrencias', OccurrenceController.findAll);
-routes.get('/ocorrencias/:id', OccurrenceController.findByPk);
-routes.post('/ocorrencias', OccurrenceController.create);
-routes.put('/ocorrencias/:id', OccurrenceController.update);
-routes.delete('/ocorrencias/:id', OccurrenceController.delete);
-
-
 routes.get('/ufs', UfController.findAll);
 routes.get('/ufs/:id', UfController.findByPk);
 routes.post('/ufs', UfController.create);
 routes.put('/ufs/:id', UfController.update);
 routes.delete('/ufs/:id', UfController.delete);
 
-routes.get('/cidades', CityController.findAll);
-routes.get('/cidades/:id', CityController.findByPk);
-routes.post('/cidades', CityController.create);
-routes.put('/cidades/:id', CityController.update);
-routes.delete('/cidades/:id', CityController.delete);
+routes.get('/cities', CityController.findAll);
+routes.get('/cities/:id', CityController.findByPk);
+routes.post('/cities', CityController.create);
+routes.put('/cities/:id', CityController.update);
+routes.delete('/cities/:id', CityController.delete);
 
-routes.get('/bairros', DistrictController.findAll);
-routes.get('/bairros/:id', DistrictController.findByPk);
-routes.post('/bairros', DistrictController.create);
-routes.put('/bairros/:id', DistrictController.update);
-routes.delete('/bairros/:id', DistrictController.delete);
+routes.get('/district', DistrictController.findAll);
+routes.get('/district/:id', DistrictController.findByPk);
+routes.post('/district', DistrictController.create);
+routes.put('/district/:id', DistrictController.update);
+routes.delete('/district/:id', DistrictController.delete);
 
-routes.get('/tutores', TutorController.findAll);
-routes.get('/tutores/:id', TutorController.findByPk);
-routes.post('/tutores', TutorController.create);
-routes.put('/tutores/:id', TutorController.update);
-routes.delete('/tutores/:id', TutorController.delete);
+routes.get('/tutors', TutorController.findAll);
+routes.get('/tutors/:id', TutorController.findByPk);
+routes.post('/tutors', TutorController.create);
+routes.put('/tutors/:id', TutorController.update);
+routes.delete('/tutors/:id', TutorController.delete);
+routes.get('/tutors/report/findAllTutorsByCityWithAmountDogs', TutorController.findAllTutorsByCityWithAmountDogs);
+routes.get('/tutors/report/findByPkCityTutorsByCityWithAmountDogs/:cityId', TutorController.findByPkCityTutorsByCityWithAmountDogs);
 
-routes.get('/racas', BreedController.findAll);
-routes.get('/racas/:id', BreedController.findByPk);
-routes.post('/racas', BreedController.create);
-routes.put('/racas/:id', BreedController.update);
-routes.delete('/racas/:id', BreedController.delete);
+routes.get('/breeds', BreedController.findAll);
+routes.get('/breeds/:id', BreedController.findByPk);
+routes.post('/breeds', BreedController.create);
+routes.put('/breeds/:id', BreedController.update);
+routes.delete('/breeds/:id', BreedController.delete);
+routes.get('/breeds/report/findAllBreedWithVaccineRestriction', BreedController.findAllBreedWithVaccineRestriction);
+routes.get('/breeds/report/findByPkBreedWithVaccineRestriction/:breedId', BreedController.findByPkBreedWithVaccineRestriction)
 
 routes.get('/vacinas', VaccineController.findAll);
 routes.get('/vacinas/:id', VaccineController.findByPk);
@@ -77,29 +74,25 @@ routes.post('/portes', DogSizeController.create);
 routes.put('/portes/:id', DogSizeController.update);
 routes.delete('/portes/:id', DogSizeController.delete);
 
-routes.get('/caes', DogController.findAll);
-routes.get('/caes/:id', DogController.findByPk);
-routes.post('/caes', DogController.create);
-routes.put('/caes/:id', DogController.update);
-routes.delete('/caes/:id', DogController.delete);
-
 routes.get('/dogs', DogController.findAll);
 routes.get('/dogs/:id', DogController.findByPk);
+routes.get('/dogs/report/findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog', DogController.findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog);
+routes.get('/dogs/report/findAllDogsByHealthState', DogController.findAllDogsByHealthState);
 routes.post('/dogs', DogController.create);
 routes.put('/dogs/:id', DogController.update);
 routes.delete('/dogs/:id', DogController.delete);
 
-routes.get('/veterinarios', VeterinarianController.findAll);
-routes.get('/veterinarios/:id', VeterinarianController.findByPk);
-routes.post('/veterinarios', VeterinarianController.create);
-routes.put('/veterinarios/:id', VeterinarianController.update);
-routes.delete('/veterinarios/:id', VeterinarianController.delete);
+routes.get('/veterinarians', VeterinarianController.findAll);
+routes.get('/veterinarians/:id', VeterinarianController.findByPk);
+routes.post('/veterinarians', VeterinarianController.create);
+routes.put('/veterinarians/:id', VeterinarianController.update);
+routes.delete('/veterinarians/:id', VeterinarianController.delete);
 
-routes.get('/tutelas', GuardianshipController.findAll);
-routes.get('/tutelas/:id', GuardianshipController.findByPk);
-routes.post('/tutelas', GuardianshipController.create);
-routes.put('/tutelas/:id', GuardianshipController.update);
-routes.delete('/tutelas/:id', GuardianshipController.delete);
+routes.get('/guardianships', GuardianshipController.findAll);
+routes.get('/guardianships/:id', GuardianshipController.findByPk);
+routes.post('/guardianships', GuardianshipController.create);
+routes.put('/guardianships/:id', GuardianshipController.update);
+routes.delete('/guardianships/:id', GuardianshipController.delete);
 
 routes.get('/occurrences', OccurrenceController.findAll);
 routes.get('/occurrences/:id', OccurrenceController.findByPk);

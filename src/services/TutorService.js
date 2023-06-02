@@ -1,4 +1,7 @@
 import { Tutor } from "../models/Tutor.js";
+import sequelize from '../config/database-connections.js'
+import { QueryTypes } from 'sequelize';
+
 /**
  * @author Raphael Macedo Bernardino
  */
@@ -44,6 +47,44 @@ class TutorService {
         } catch (error) {
             throw "Não é possível remover, há dependências!";
         }
+    }
+    //Raphael Macedo Bernardino
+    static async findAllTutorsByCityWithAmountDogs(req){
+        const objs = await sequelize.query(
+            `SELECT t.id AS "ID do Tutor",
+             t.name 					AS "Nome do Tutor",
+             g.date 					AS "Data da adoção",
+             c.name 					AS "Nome da Cidade",
+             COUNT(g.dog_id) 	AS "Quantidade de Cachorros"
+             FROM tutors t
+             JOIN districts d 						ON t.district_id = d.id
+             INNER JOIN cities c 				ON d.city_id = c.id
+             INNER JOIN guardianships g 	ON g.tutor_id = t.id
+             GROUP BY t.id, t.name, c.name
+             ORDER BY t.name;`, {type: QueryTypes.SELECT}
+        );
+        return objs;
+    }
+    
+    //Raphael Macedo Bernardino
+    static async findByPkCityTutorsByCityWithAmountDogs(req){
+        const { cityId } = req.params;
+        const objs = await sequelize.query(`
+        SELECT t.id 			            AS "ID do Tutor",
+        c.id                                AS "ID da Cidade",
+		t.name 					            AS "Nome do Tutor",
+		g.date 					            AS "Data da adoção",
+        c.name 					            AS "Nome da Cidade",
+        COUNT(g.dog_id) 	                AS "Quantidade de Cachorros"
+        FROM tutors t
+        JOIN districts d 					ON t.district_id = d.id
+        INNER JOIN cities c 				ON d.city_id = c.id
+        INNER JOIN guardianships g 	        ON g.tutor_id = t.id
+        WHERE c.id = :cityId
+        GROUP BY t.id, t.name, c.name
+        ORDER BY t.name;
+    `, {replacements: { cityId }, type: QueryTypes.SELECT})
+    return objs;
     }
 
 }
