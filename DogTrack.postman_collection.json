@@ -1,5 +1,6 @@
 {
 	"info": {
+		"_postman_id": "e102a427-f07b-4a8b-9993-ba554e4f03f4",
 		"name": "DogTrack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -320,7 +321,20 @@
 					"name": "findAllOccurrenceByDogAndOwner_Full",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/occurrences/report/findAllOccurrenceByDogAndOwner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"report",
+								"findAllOccurrenceByDogAndOwner"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2478,7 +2492,10 @@
 					"name": "findAll",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
