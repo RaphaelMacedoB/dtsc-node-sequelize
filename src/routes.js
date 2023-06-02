@@ -88,11 +88,11 @@ routes.post('/veterinarians', VeterinarianController.create);
 routes.put('/veterinarians/:id', VeterinarianController.update);
 routes.delete('/veterinarians/:id', VeterinarianController.delete);
 
-routes.get('/tutelas', GuardianshipController.findAll);
-routes.get('/tutelas/:id', GuardianshipController.findByPk);
-routes.post('/tutelas', GuardianshipController.create);
-routes.put('/tutelas/:id', GuardianshipController.update);
-routes.delete('/tutelas/:id', GuardianshipController.delete);
+routes.get('/guardianships', GuardianshipController.findAll);
+routes.get('/guardianships/:id', GuardianshipController.findByPk);
+routes.post('/guardianships', GuardianshipController.create);
+routes.put('/guardianships/:id', GuardianshipController.update);
+routes.delete('/guardianships/:id', GuardianshipController.delete);
 
 routes.get('/occurrences', OccurrenceController.findAll);
 routes.get('/occurrences/:id', OccurrenceController.findByPk);
