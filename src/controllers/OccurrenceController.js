@@ -2,6 +2,7 @@ import { OccurrenceService } from "../services/OccurrenceService.js";
 /**
  * @author Jefferson Abreu
  */
+
 class OccurrenceController {
   
   static async findAll(req, res, next) {
