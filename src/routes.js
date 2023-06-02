@@ -16,13 +16,6 @@ import { OccurrenceController } from "./controllers/OccurrenceController.js"
 
 const routes = express.Router();
 
-routes.get('/ocorrencias', OccurrenceController.findAll);
-routes.get('/ocorrencias/:id', OccurrenceController.findByPk);
-routes.post('/ocorrencias', OccurrenceController.create);
-routes.put('/ocorrencias/:id', OccurrenceController.update);
-routes.delete('/ocorrencias/:id', OccurrenceController.delete);
-
-
 routes.get('/ufs', UfController.findAll);
 routes.get('/ufs/:id', UfController.findByPk);
 routes.post('/ufs', UfController.create);
@@ -81,14 +74,10 @@ routes.post('/portes', DogSizeController.create);
 routes.put('/portes/:id', DogSizeController.update);
 routes.delete('/portes/:id', DogSizeController.delete);
 
-routes.get('/caes', DogController.findAll);
-routes.get('/caes/:id', DogController.findByPk);
-routes.post('/caes', DogController.create);
-routes.put('/caes/:id', DogController.update);
-routes.delete('/caes/:id', DogController.delete);
-
 routes.get('/dogs', DogController.findAll);
 routes.get('/dogs/:id', DogController.findByPk);
+routes.get('/dogs/report/findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog', DogController.findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog);
+routes.get('/dogs/report/findAllDogsByHealthState', DogController.findAllDogsByHealthState);
 routes.post('/dogs', DogController.create);
 routes.put('/dogs/:id', DogController.update);
 routes.delete('/dogs/:id', DogController.delete);

@@ -1,5 +1,6 @@
 {
 	"info": {
+		"_postman_id": "251d6347-65e0-4647-b46a-9d6bdb1eec5b",
 		"name": "DogTrack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -118,6 +119,48 @@
 							"path": [
 								"dogs",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs/report/findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"report",
+								"findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllDogsByHealthState",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/dogs/report/findAllDogsByHealthState",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"dogs",
+								"report",
+								"findAllDogsByHealthState"
 							]
 						}
 					},
@@ -1369,7 +1412,10 @@
 					"name": "findAll",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
