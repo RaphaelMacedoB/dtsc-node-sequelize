@@ -2,19 +2,26 @@ import express from "express";
 
 import { UfController } from './controllers/UfController.js';
 import { CityController } from "./controllers/CityController.js";
-import { DistrictController } from "./controllers/DistrictController.js";
-import { TutorController } from "./controllers/TutorController.js";
-import { VaccineController } from "./controllers/VaccineController.js";
-import { BreedController } from "./controllers/BreedController.js";
-import { EmployeeController } from "./controllers/EmployeeController.js";
-import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceController.js";
-import { DogSizeController } from "./controllers/DogSizeController.js";
-import { DogController } from "./controllers/DogController.js";
-import { VeterinarianController } from "./controllers/VeterinarianController.js";
-import { GuardianshipController } from "./controllers/GuardianshipController.js";
-import { OccurrenceController } from "./controllers/OccurrenceController.js";
+import { DistrictController } from "./controllers/DistrictController.js"
+import { TutorController } from "./controllers/TutorController.js"
+import { VaccineController } from "./controllers/VaccineController.js"
+import { BreedController } from "./controllers/BreedController.js"
+import { EmployeeController } from "./controllers/EmployeeController.js"
+import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceController.js"
+import { DogSizeController } from "./controllers/DogSizeController.js"
+import { DogController } from "./controllers/DogController.js"
+import { VeterinarianController } from "./controllers/VeterinarianController.js"
+import { GuardianshipController } from "./controllers/GuardianshipController.js"
+import { OccurrenceController } from "./controllers/OccurrenceController.js"
 
 const routes = express.Router();
+
+routes.get('/ocorrencias', OccurrenceController.findAll);
+routes.get('/ocorrencias/:id', OccurrenceController.findByPk);
+routes.post('/ocorrencias', OccurrenceController.create);
+routes.put('/ocorrencias/:id', OccurrenceController.update);
+routes.delete('/ocorrencias/:id', OccurrenceController.delete);
+
 
 routes.get('/ufs', UfController.findAll);
 routes.get('/ufs/:id', UfController.findByPk);
