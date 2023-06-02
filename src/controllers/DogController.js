@@ -34,6 +34,21 @@ class DogController {
             .catch(next);
     }
 
+    static async findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog(req, res, next){
+      DogService.findAllDogsByAggresionScoreAndAmountOfOccurrencesByDog(req)
+      .then(obj => res.json(obj))
+      .catch(next);
+    }
+  /*Dogs by Aggresion Score and Amount of Occurrences by Dog*/ 
+
+
+  static async findAllDogsByHealthState(req, res, next){
+    DogService.findAllDogsByHealthState(req)
+      .then(obj => res.json(obj))
+      .catch(next);
+  }
 }
+  
+  
 
 export { DogController };
