@@ -22,25 +22,25 @@ routes.post('/ufs', UfController.create);
 routes.put('/ufs/:id', UfController.update);
 routes.delete('/ufs/:id', UfController.delete);
 
-routes.get('/cidades', CityController.findAll);
-routes.get('/cidades/:id', CityController.findByPk);
-routes.post('/cidades', CityController.create);
-routes.put('/cidades/:id', CityController.update);
-routes.delete('/cidades/:id', CityController.delete);
+routes.get('/cities', CityController.findAll);
+routes.get('/cities/:id', CityController.findByPk);
+routes.post('/cities', CityController.create);
+routes.put('/cities/:id', CityController.update);
+routes.delete('/cities/:id', CityController.delete);
 
-routes.get('/bairros', DistrictController.findAll);
-routes.get('/bairros/:id', DistrictController.findByPk);
-routes.post('/bairros', DistrictController.create);
-routes.put('/bairros/:id', DistrictController.update);
-routes.delete('/bairros/:id', DistrictController.delete);
+routes.get('/district', DistrictController.findAll);
+routes.get('/district/:id', DistrictController.findByPk);
+routes.post('/district', DistrictController.create);
+routes.put('/district/:id', DistrictController.update);
+routes.delete('/district/:id', DistrictController.delete);
 
-routes.get('/tutores', TutorController.findAll);
-routes.get('/tutores/:id', TutorController.findByPk);
-routes.post('/tutores', TutorController.create);
-routes.put('/tutores/:id', TutorController.update);
-routes.delete('/tutores/:id', TutorController.delete);
-routes.get('/tutores/report/findTutorsByCityWithAmountDogs', TutorController.findTutorsByCityWithAmountDogs);
-routes.get('/tutores/report/findByPkCityTutorsByCityWithAmountDogs/:cityId', TutorController.findByPkCityTutorsByCityWithAmountDogs);
+routes.get('/tutors', TutorController.findAll);
+routes.get('/tutors/:id', TutorController.findByPk);
+routes.post('/tutors', TutorController.create);
+routes.put('/tutors/:id', TutorController.update);
+routes.delete('/tutors/:id', TutorController.delete);
+routes.get('/tutors/report/findTutorsByCityWithAmountDogs', TutorController.findTutorsByCityWithAmountDogs);
+routes.get('/tutors/report/findByPkCityTutorsByCityWithAmountDogs/:cityId', TutorController.findByPkCityTutorsByCityWithAmountDogs);
 
 routes.get('/racas', BreedController.findAll);
 routes.get('/racas/:id', BreedController.findByPk);
@@ -82,11 +82,11 @@ routes.post('/dogs', DogController.create);
 routes.put('/dogs/:id', DogController.update);
 routes.delete('/dogs/:id', DogController.delete);
 
-routes.get('/veterinarios', VeterinarianController.findAll);
-routes.get('/veterinarios/:id', VeterinarianController.findByPk);
-routes.post('/veterinarios', VeterinarianController.create);
-routes.put('/veterinarios/:id', VeterinarianController.update);
-routes.delete('/veterinarios/:id', VeterinarianController.delete);
+routes.get('/veterinarians', VeterinarianController.findAll);
+routes.get('/veterinarians/:id', VeterinarianController.findByPk);
+routes.post('/veterinarians', VeterinarianController.create);
+routes.put('/veterinarians/:id', VeterinarianController.update);
+routes.delete('/veterinarians/:id', VeterinarianController.delete);
 
 routes.get('/tutelas', GuardianshipController.findAll);
 routes.get('/tutelas/:id', GuardianshipController.findByPk);

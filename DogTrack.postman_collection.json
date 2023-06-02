@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "251d6347-65e0-4647-b46a-9d6bdb1eec5b",
+		"_postman_id": "114c3f03-183b-4f48-9bd6-0351feb8ab78",
 		"name": "DogTrack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -603,17 +603,6 @@
 							"path": [
 								"tutelas"
 							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
 						}
 					},
 					"response": []
@@ -1503,6 +1492,27 @@
 								""
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutors",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "findByPk",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
