@@ -1,6 +1,5 @@
 {
 	"info": {
-		"_postman_id": "114c3f03-183b-4f48-9bd6-0351feb8ab78",
 		"name": "DogTrack",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -281,6 +280,103 @@
 							"port": "3333",
 							"path": [
 								"occurrences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllOccurrenceByDogAndOwner_Params",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/occurrences/report/findAllOccurrenceByDogAndOwner/2/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"report",
+								"findAllOccurrenceByDogAndOwner",
+								"2",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllOccurrenceByDogAndOwner_Full",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "findAllOccurrenceThatDayByVet_Params",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/occurrences/report/findAllOccurrenceThatDayByVet/2021-04-12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"report",
+								"findAllOccurrenceThatDayByVet",
+								"2021-04-12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllOccurrenceThatDayByVet_Full",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3333/occurrences/report/findAllOccurrenceByDogAndOwner/2/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"occurrences",
+								"report",
+								"findAllOccurrenceByDogAndOwner",
+								"2",
 								"1"
 							]
 						}
@@ -2382,10 +2478,7 @@
 					"name": "findAll",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": ""
-						}
+						"header": []
 					},
 					"response": []
 				},
@@ -2475,576 +2568,6 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Tutors",
-			"item": [
-				{
-					"name": "findAll",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/tutors",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "findAll",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3333/tutors",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "3420"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"d5c-wiu2OWoCcQ4B41o33hHApSbBPvc\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:44:15 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Lucas Macedo Bernardino\",\n        \"house_number\": 108,\n        \"zip_code\": \"29.307-195\",\n        \"email\": \"lucasmacedoes@gmail.com\",\n        \"phone\": \"(28)99930-4053\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"2000-03-28\",\n        \"space_size\": 500,\n        \"createdAt\": \"2023-06-02T20:40:02.996Z\",\n        \"updatedAt\": \"2023-06-02T20:40:02.996Z\",\n        \"districtId\": 2,\n        \"district\": {\n            \"id\": 2,\n            \"name\": \"Guararema\",\n            \"createdAt\": \"2023-06-02T20:40:02.765Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.765Z\",\n            \"cityId\": 1,\n            \"city\": {\n                \"id\": 1,\n                \"name\": \"Cachoeiro\",\n                \"createdAt\": \"2023-06-02T20:40:02.450Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.450Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                    \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n                }\n            }\n        }\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Raphael Macedo Bernardino\",\n        \"house_number\": 108,\n        \"zip_code\": \"29.307-195\",\n        \"email\": \"faeldojo@gmail.com\",\n        \"phone\": \"(28)99916-2116\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"2000-03-28\",\n        \"space_size\": 500,\n        \"createdAt\": \"2023-06-02T20:40:03.075Z\",\n        \"updatedAt\": \"2023-06-02T20:40:03.075Z\",\n        \"districtId\": 2,\n        \"district\": {\n            \"id\": 2,\n            \"name\": \"Guararema\",\n            \"createdAt\": \"2023-06-02T20:40:02.765Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.765Z\",\n            \"cityId\": 1,\n            \"city\": {\n                \"id\": 1,\n                \"name\": \"Cachoeiro\",\n                \"createdAt\": \"2023-06-02T20:40:02.450Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.450Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                    \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n                }\n            }\n        }\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Jefferson Abreu\",\n        \"house_number\": 49,\n        \"zip_code\": \"29.307-125\",\n        \"email\": \"download10@gmail.com\",\n        \"phone\": \"(28)99914-4651\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"1980-02-14\",\n        \"space_size\": 650,\n        \"createdAt\": \"2023-06-02T20:40:03.140Z\",\n        \"updatedAt\": \"2023-06-02T20:40:03.140Z\",\n        \"districtId\": 1,\n        \"district\": {\n            \"id\": 1,\n            \"name\": \"Vila do Sul\",\n            \"createdAt\": \"2023-06-02T20:40:02.698Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.698Z\",\n            \"cityId\": 1,\n            \"city\": {\n                \"id\": 1,\n                \"name\": \"Cachoeiro\",\n                \"createdAt\": \"2023-06-02T20:40:02.450Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.450Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                    \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n                }\n            }\n        }\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Jonatas Silva Bernardino\",\n        \"house_number\": 108,\n        \"zip_code\": \"29.307-195\",\n        \"email\": \"jobernardino0@gmail.com\",\n        \"phone\": \"(28)99919-0497\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"1979-04-14\",\n        \"space_size\": 650,\n        \"createdAt\": \"2023-06-02T20:40:03.198Z\",\n        \"updatedAt\": \"2023-06-02T20:40:03.198Z\",\n        \"districtId\": 3,\n        \"district\": {\n            \"id\": 3,\n            \"name\": \"Maria Ortiz\",\n            \"createdAt\": \"2023-06-02T20:40:02.832Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.832Z\",\n            \"cityId\": 2,\n            \"city\": {\n                \"id\": 2,\n                \"name\": \"Alegre\",\n                \"createdAt\": \"2023-06-02T20:40:02.507Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.507Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                    \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n                }\n            }\n        }\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Teste dos Santos\",\n        \"house_number\": 14,\n        \"zip_code\": \"29.698-164\",\n        \"email\": \"testedossantos@hotmail.com\",\n        \"phone\": \"(14)99946-9925\",\n        \"public_place\": \"Aceito\",\n        \"date_of_birth\": \"2000-03-28\",\n        \"space_size\": 500,\n        \"createdAt\": \"2023-06-02T20:43:34.937Z\",\n        \"updatedAt\": \"2023-06-02T20:43:34.937Z\",\n        \"districtId\": 1,\n        \"district\": {\n            \"id\": 1,\n            \"name\": \"Vila do Sul\",\n            \"createdAt\": \"2023-06-02T20:40:02.698Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.698Z\",\n            \"cityId\": 1,\n            \"city\": {\n                \"id\": 1,\n                \"name\": \"Cachoeiro\",\n                \"createdAt\": \"2023-06-02T20:40:02.450Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.450Z\",\n                \"ufId\": 1,\n                \"uf\": {\n                    \"id\": 1,\n                    \"sigla\": \"ES\",\n                    \"name\": \"Espírito Santo\",\n                    \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                    \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n                }\n            }\n        }\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "findByPk",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/tutors/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors",
-								"1"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "findByPk",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3333/tutors/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "686"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2ae-D+wWPQ5BXio3rTaPT6rTjWA7Hoo\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:37:06 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"name\": \"Lucas Macedo Bernardino\",\n    \"house_number\": 108,\n    \"zip_code\": \"29.307-195\",\n    \"email\": \"lucasmacedoes@gmail.com\",\n    \"phone\": \"(28)99930-4053\",\n    \"public_place\": \"Aceito\",\n    \"date_of_birth\": \"2000-03-28\",\n    \"space_size\": 500,\n    \"createdAt\": \"2023-06-02T19:00:12.701Z\",\n    \"updatedAt\": \"2023-06-02T19:00:12.701Z\",\n    \"districtId\": 2,\n    \"district\": {\n        \"id\": 2,\n        \"name\": \"Guararema\",\n        \"createdAt\": \"2023-06-02T19:00:12.513Z\",\n        \"updatedAt\": \"2023-06-02T19:00:12.513Z\",\n        \"cityId\": 1,\n        \"city\": {\n            \"id\": 1,\n            \"name\": \"Cachoeiro\",\n            \"createdAt\": \"2023-06-02T19:00:12.177Z\",\n            \"updatedAt\": \"2023-06-02T19:00:12.177Z\",\n            \"ufId\": 1,\n            \"uf\": {\n                \"id\": 1,\n                \"sigla\": \"ES\",\n                \"name\": \"Espírito Santo\",\n                \"createdAt\": \"2023-06-02T19:00:12.042Z\",\n                \"updatedAt\": \"2023-06-02T19:00:12.042Z\"\n            }\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "create",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Teste dos Santos\",\r\n    \"house_number\": 14,\r\n    \"zip_code\": \"29.698-164\",\r\n    \"email\": \"testedossantos@hotmail.com\",\r\n    \"phone\": \"(14)99946-9925\",\r\n    \"public_place\": \"Aceito\",\r\n    \"date_of_birth\": \"2000-03-28\",\r\n    \"space_size\": 500,\r\n    \"district\": {\"id\": \"1\"}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3333/tutors/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors",
-								""
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "create",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Teste dos Santos\",\r\n    \"house_number\": 14,\r\n    \"zip_code\": \"29.698-164\",\r\n    \"email\": \"testedossantos@hotmail.com\",\r\n    \"phone\": \"(14)99946-9925\",\r\n    \"public_place\": \"Aceito\",\r\n    \"date_of_birth\": \"2000-03-28\",\r\n    \"space_size\": 500,\r\n    \"district\": {\"id\": \"1\"}\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3333/tutors/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors",
-										""
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "683"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2ab-OPzE8KInLxGLxRXn8vi5lh+dmIc\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:43:35 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 5,\n    \"name\": \"Teste dos Santos\",\n    \"house_number\": 14,\n    \"zip_code\": \"29.698-164\",\n    \"email\": \"testedossantos@hotmail.com\",\n    \"phone\": \"(14)99946-9925\",\n    \"public_place\": \"Aceito\",\n    \"date_of_birth\": \"2000-03-28\",\n    \"space_size\": 500,\n    \"createdAt\": \"2023-06-02T20:43:34.937Z\",\n    \"updatedAt\": \"2023-06-02T20:43:34.937Z\",\n    \"districtId\": 1,\n    \"district\": {\n        \"id\": 1,\n        \"name\": \"Vila do Sul\",\n        \"createdAt\": \"2023-06-02T20:40:02.698Z\",\n        \"updatedAt\": \"2023-06-02T20:40:02.698Z\",\n        \"cityId\": 1,\n        \"city\": {\n            \"id\": 1,\n            \"name\": \"Cachoeiro\",\n            \"createdAt\": \"2023-06-02T20:40:02.450Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.450Z\",\n            \"ufId\": 1,\n            \"uf\": {\n                \"id\": 1,\n                \"sigla\": \"ES\",\n                \"name\": \"Espírito Santo\",\n                \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n            }\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"house_number\": 14,\r\n    \"zip_code\": \"29.698-164\",\r\n    \"email\": \"testedossantos@hotmail.com\",\r\n    \"phone\": \"(14)99946-9925\",\r\n    \"public_place\": \"Aceito\",\r\n    \"date_of_birth\": \"2000-03-28\",\r\n    \"space_size\": 500,\r\n    \"district\": {\"id\": \"1\"}\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3333/tutors/5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors",
-								"5"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "update",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Teste\",\r\n    \"house_number\": 14,\r\n    \"zip_code\": \"29.698-164\",\r\n    \"email\": \"testedossantos@hotmail.com\",\r\n    \"phone\": \"(14)99946-9925\",\r\n    \"public_place\": \"Aceito\",\r\n    \"date_of_birth\": \"2000-03-28\",\r\n    \"space_size\": 500,\r\n    \"district\": {\"id\": \"1\"}\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3333/tutors/5",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors",
-										"5"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "672"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"2a0-wLCynaQSL+sMWGTPVzPxlHGtfiI\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:44:37 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 5,\n    \"name\": \"Teste\",\n    \"house_number\": 14,\n    \"zip_code\": \"29.698-164\",\n    \"email\": \"testedossantos@hotmail.com\",\n    \"phone\": \"(14)99946-9925\",\n    \"public_place\": \"Aceito\",\n    \"date_of_birth\": \"2000-03-28\",\n    \"space_size\": 500,\n    \"createdAt\": \"2023-06-02T20:43:34.937Z\",\n    \"updatedAt\": \"2023-06-02T20:44:37.362Z\",\n    \"districtId\": 1,\n    \"district\": {\n        \"id\": 1,\n        \"name\": \"Vila do Sul\",\n        \"createdAt\": \"2023-06-02T20:40:02.698Z\",\n        \"updatedAt\": \"2023-06-02T20:40:02.698Z\",\n        \"cityId\": 1,\n        \"city\": {\n            \"id\": 1,\n            \"name\": \"Cachoeiro\",\n            \"createdAt\": \"2023-06-02T20:40:02.450Z\",\n            \"updatedAt\": \"2023-06-02T20:40:02.450Z\",\n            \"ufId\": 1,\n            \"uf\": {\n                \"id\": 1,\n                \"sigla\": \"ES\",\n                \"name\": \"Espírito Santo\",\n                \"createdAt\": \"2023-06-02T20:40:02.296Z\",\n                \"updatedAt\": \"2023-06-02T20:40:02.296Z\"\n            }\n        }\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/tutors/5",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors",
-								"5"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "delete",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3333/tutors/5",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors",
-										"5"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "290"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"122-vEfhEsGl6hnPHwxov4uMHp9D5Q0\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:45:01 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 5,\n    \"name\": \"Teste\",\n    \"house_number\": 14,\n    \"zip_code\": \"29.698-164\",\n    \"email\": \"testedossantos@hotmail.com\",\n    \"phone\": \"(14)99946-9925\",\n    \"public_place\": \"Aceito\",\n    \"date_of_birth\": \"2000-03-28\",\n    \"space_size\": 500,\n    \"createdAt\": \"2023-06-02T20:43:34.937Z\",\n    \"updatedAt\": \"2023-06-02T20:44:37.362Z\",\n    \"districtId\": 1\n}"
-						}
-					]
-				},
-				{
-					"name": "findAllTutorsByCityWithAmountDogs",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/tutors/report/findAllTutorsByCityWithAmountDogs",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors",
-								"report",
-								"findAllTutorsByCityWithAmountDogs"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "findAllTutorsByCityWithAmountDogs",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3333/tutors/report/findAllTutorsByCityWithAmountDogs",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors",
-										"report",
-										"findAllTutorsByCityWithAmountDogs"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "589"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"24d-uqwLxexyqr9CUZ6ELvcZj/1Qq5g\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:49:04 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"ID do Tutor\": 3,\n        \"Nome do Tutor\": \"Jefferson Abreu\",\n        \"Data da adoção\": \"2012-04-21\",\n        \"Nome da Cidade\": \"Cachoeiro\",\n        \"Quantidade de Cachorros\": 1\n    },\n    {\n        \"ID do Tutor\": 4,\n        \"Nome do Tutor\": \"Jonatas Silva Bernardino\",\n        \"Data da adoção\": \"2022-12-13\",\n        \"Nome da Cidade\": \"Alegre\",\n        \"Quantidade de Cachorros\": 1\n    },\n    {\n        \"ID do Tutor\": 1,\n        \"Nome do Tutor\": \"Lucas Macedo Bernardino\",\n        \"Data da adoção\": \"2000-12-04\",\n        \"Nome da Cidade\": \"Cachoeiro\",\n        \"Quantidade de Cachorros\": 2\n    },\n    {\n        \"ID do Tutor\": 2,\n        \"Nome do Tutor\": \"Raphael Macedo Bernardino\",\n        \"Data da adoção\": \"2021-03-24\",\n        \"Nome da Cidade\": \"Cachoeiro\",\n        \"Quantidade de Cachorros\": 1\n    }\n]"
-						}
-					]
-				},
-				{
-					"name": "findByPkCityTutorsByCityWithAmountDogs",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/tutors/report/findByPkCityTutorsByCityWithAmountDogs/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"tutors",
-								"report",
-								"findByPkCityTutorsByCityWithAmountDogs",
-								"1"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "findByPkCityTutorsByCityWithAmountDogs",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3333/tutors/report/findByPkCityTutorsByCityWithAmountDogs/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3333",
-									"path": [
-										"tutors",
-										"report",
-										"findByPkCityTutorsByCityWithAmountDogs",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "493"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1ed-19RKPfFA6e+iw0Tj9CZqTOgSBrY\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 02 Jun 2023 20:51:57 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "[\n    {\n        \"ID do Tutor\": 3,\n        \"ID da Cidade\": 1,\n        \"Nome do Tutor\": \"Jefferson Abreu\",\n        \"Data da adoção\": \"2012-04-21\",\n        \"Nome da Cidade\": \"Cachoeiro\",\n        \"Quantidade de Cachorros\": 1\n    },\n    {\n        \"ID do Tutor\": 1,\n        \"ID da Cidade\": 1,\n        \"Nome do Tutor\": \"Lucas Macedo Bernardino\",\n        \"Data da adoção\": \"2000-12-04\",\n        \"Nome da Cidade\": \"Cachoeiro\",\n        \"Quantidade de Cachorros\": 2\n    },\n    {\n        \"ID do Tutor\": 2,\n        \"ID da Cidade\": 1,\n        \"Nome do Tutor\": \"Raphael Macedo Bernardino\",\n        \"Data da adoção\": \"2021-03-24\",\n        \"Nome da Cidade\": \"Cachoeiro\",\n        \"Quantidade de Cachorros\": 1\n    }\n]"
-						}
-					]
 				}
 			]
 		}

@@ -99,6 +99,10 @@ routes.get('/occurrences/:id', OccurrenceController.findByPk);
 routes.post('/occurrences', OccurrenceController.create);
 routes.put('/occurrences/:id', OccurrenceController.update);
 routes.delete('/occurrences/:id', OccurrenceController.delete);
+routes.get('/occurrences/report/findAllOccurrenceThatDayByVet', OccurrenceController.findAllOccurrenceThatDayByVet);
+routes.get('/occurrences/report/findAllOccurrenceThatDayByVet/:date', OccurrenceController.findAllOccurrenceThatDayByVet);
+routes.get('/occurrences/report/findAllOccurrenceByDogAndOwner', OccurrenceController.findAllOccurrenceByDogAndOwner);
+routes.get('/occurrences/report/findAllOccurrenceByDogAndOwner/:tutorId/:dogId', OccurrenceController.findAllOccurrenceByDogAndOwner);
 
 
 export default routes;
