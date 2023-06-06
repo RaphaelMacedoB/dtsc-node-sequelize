@@ -1,0 +1,13 @@
+200OK 
+
+201 Criação 
+
+204 No content
+
+422 Unprocessable Content
+ 
+400 Bad Request 
+
+401 Não ta autenticado
+
+403 tá autenticado mas não tem autorização
