@@ -18,7 +18,7 @@ class DogController {
 
     static async create(req, res, next) {
         DogService.create(req)
-            .then(obj => res.json(obj))
+            .then(obj => res.json(obj,201))
             .catch(next);
     }
 

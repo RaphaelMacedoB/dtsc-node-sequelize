@@ -18,7 +18,7 @@ class EmployeeController {
 
     static async create(req, res, next) {
         EmployeeService.create(req)
-            .then(obj => res.json(obj))
+            .then(obj => res.json(obj,201))
             .catch(next);
     }
 

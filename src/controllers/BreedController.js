@@ -18,7 +18,7 @@ class BreedController {
 
     static async create(req, res, next) {
         BreedService.create(req)
-            .then(obj => res.json(obj))
+            .then(obj => res.json(obj,201))
             .catch(next);
     }
 

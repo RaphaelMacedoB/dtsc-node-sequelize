@@ -18,7 +18,7 @@ class TutorController {
 
     static async create(req, res, next) {
         TutorService.create(req)
-            .then(obj => res.json(obj))
+            .then(obj => res.json(obj,201))
             .catch(next);
     }
 

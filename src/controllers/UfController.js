@@ -16,7 +16,7 @@ class UfController {
 
     static async create(req, res, next) {
         UfService.create(req)
-            .then(obj => res.json(obj))
+            .then(obj => res.json(obj,201))
             .catch(next);
     }
 

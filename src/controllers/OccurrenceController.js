@@ -42,7 +42,7 @@ class OccurrenceController {
 
   static async create(req, res, next) {
     OccurrenceService.create(req)
-      .then(obj => res.json(obj))
+      .then(obj => res.json(obj,201))
       .catch(next);
   }
 

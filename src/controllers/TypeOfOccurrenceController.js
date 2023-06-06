@@ -18,7 +18,7 @@ class TypeOfOccurrenceController {
 
   static async create(req, res, next) {
     TypeOfOccurrence.create(req)
-      .then(obj => res.json(obj))
+      .then(obj => res.json(obj,201))
       .catch(next);
   }
 
