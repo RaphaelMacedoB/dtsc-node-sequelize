@@ -1,5 +1,4 @@
 /node_modules
 database.sqlite
-src/config/database-connections-pg.js
 .replit
 replit.nix

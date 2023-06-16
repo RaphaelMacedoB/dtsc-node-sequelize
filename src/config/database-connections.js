@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import { databaseConfig } from "./database-config.js";
+import { databaseConfigSQLite, databaseConfigRender, databaseConfigPostgres } from "./database-config.js";
 
 import { Uf } from "../models/Uf.js";
 import { City } from "../models/City.js";
@@ -19,7 +19,7 @@ import { Guardianship } from "../models/Guardianship.js";
 
 
 
-const sequelize = new Sequelize(databaseConfig)
+const sequelize = new Sequelize(databaseConfigRender)
 
 
 Uf.init(sequelize)
@@ -59,7 +59,8 @@ databaseInserts();
 
 function databaseInserts() {
     (async() => {
-        await sequelize.sync({ force: true })
+        await sequelize.sync();
+        /*await sequelize.sync({ force: true })
         const uf1 = await Uf.create({ sigla: "ES", name: "Espírito Santo" });
         const uf2 = await Uf.create({ sigla: "MG", name: "Minas Gerais" });
 
@@ -105,8 +106,8 @@ function databaseInserts() {
         const breed4 = await Breed.create({ name: "Bull Terrier", dogSizeId: 3 })
         const breed5 = await Breed.create({ name: "Fox Paulistinha", dogSizeId: 2 })
 
-        /*DOG*/
-
+        /*DOG
+  
         const vaccine1 = await Vaccine.create({ name: "AHS82", dosage_interval_days: "3"})
         const vaccine2 = await Vaccine.create({ name: "DJGH21", dosage_interval_days: "4"})
         const vaccine3 = await Vaccine.create({ name: "WYRT0", dosage_interval_days: "5"})
@@ -211,7 +212,7 @@ function databaseInserts() {
             veterinarianId: 1
         })
         const vaccination5 = await Vaccination.create({
-            date: "2021/03/50",
+            date: "2021/03/10",
             vaccineId: 1,
             dogId: 1,
             employeeId: 1,
@@ -304,6 +305,7 @@ function databaseInserts() {
             employeeId: 3,
             tutorId: 1
         })
+        */
     })();
 }
 
