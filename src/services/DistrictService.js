@@ -29,10 +29,10 @@ class DistrictService {
     static async update(req) {
         const { id } = req.params;
         const { name, city } = req.body;
-        if (uf == null) throw 'O Bairro da Cidade deve ser preenchido!';
+        if (city == null) throw 'O Bairro da Cidade deve ser preenchido!';
         const obj = await District.findByPk(id, { include: { all: true, nested: true } });
         if (obj == null) throw 'Bairro não encontrado!';
-        Object.assign(obj, { name, cityId: city .id });
+        Object.assign(obj, { name, cityId: city.id });
         await obj.save();
         return await District.findByPk(obj.id, { include: { all: true, nested: true } });
     }
