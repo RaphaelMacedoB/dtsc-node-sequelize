@@ -114,9 +114,6 @@ class VaccinationService {
       AND vc.dog_id = d.id
       AND d.id = ${dog.id}
       AND v.id = ${vaccine.id}`);
-      console.log('====================================');
-      console.log(objs);
-      console.log('====================================');
     return objs[0][0].dosage_interval_days;
   }
 

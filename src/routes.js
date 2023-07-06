@@ -13,7 +13,7 @@ import { DogController } from "./controllers/DogController.js"
 import { VeterinarianController } from "./controllers/VeterinarianController.js"
 import { GuardianshipController } from "./controllers/GuardianshipController.js"
 import { OccurrenceController } from "./controllers/OccurrenceController.js"
-
+import {VaccinationController} from "./controllers/VaccinationController.js"
 const routes = express.Router();
 
 routes.get('/ufs', UfController.findAll);
@@ -104,5 +104,9 @@ routes.get('/occurrences/report/findAllOccurrenceThatDayByVet/:date', Occurrence
 routes.get('/occurrences/report/findAllOccurrenceByDogAndOwner', OccurrenceController.findAllOccurrenceByDogAndOwner);
 routes.get('/occurrences/report/findAllOccurrenceByDogAndOwner/:tutorId/:dogId', OccurrenceController.findAllOccurrenceByDogAndOwner);
 
-
+routes.get('/vaccinations', VaccinationController.findAll)
+routes.post('/vaccinations', VaccinationController.create)
+routes.put('/vaccinations', VaccinationController.update)
+routes.delete('/vaccinations', VaccinationController.delete)
+routes.get('/vaccinations/:id', VaccinationController.findByPk)
 export default routes;
