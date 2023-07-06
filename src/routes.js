@@ -7,7 +7,7 @@ import { TutorController } from "./controllers/TutorController.js"
 import { VaccineController } from "./controllers/VaccineController.js"
 import { BreedController } from "./controllers/BreedController.js"
 import { EmployeeController } from "./controllers/EmployeeController.js"
-import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceController.js"
+import { TypeOfOccurrenceController } from "./controllers/TypeOfOccurrenceController.js"; 
 import { DogSizeController } from "./controllers/DogSizeController.js"
 import { DogController } from "./controllers/DogController.js"
 import { VeterinarianController } from "./controllers/VeterinarianController.js"
